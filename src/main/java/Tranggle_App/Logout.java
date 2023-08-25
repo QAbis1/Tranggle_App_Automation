@@ -20,22 +20,6 @@ public class Logout {
 
 	private AppiumDriver<MobileElement> driver;
 
-	// sleep 타임 대기 변수 -> 앱 이동 및 동작 간에 대기하는 시간이 발샏하여, 전역변수 선언을 통해 공유하여 사용
-	int short_Sleep_Time = 500;
-	int short_Sleep_Time_1000 = 1000;
-	int normal_Sleep_Time_1500 = 1500;
-	int normal_Sleep_Time_2000 = 2000;
-	int long_Sleep_Time = 3000;
-	int long_Sleep_Time_5000 = 5000;
-
-	// 타임 대기 시간 변수 선언
-	int short_Sleep_Seconds_1 = 1;
-	int short_Sleep_Seconds_2 = 2;
-	int normal_Sleep_Seconds_3 = 3;
-	int long_Sleep_Seconds_5 = 5;
-	int long_Sleep_Seconds_7 = 7;
-	int long_Sleep_Seconds_10 = 10;
-
 	@BeforeClass
 	public void SetDriver() throws MalformedURLException {
 		// mobileCapabilityType 명 변수 선언
@@ -82,7 +66,7 @@ public class Logout {
 		System.out.println("Logout_Test() - Start");
 		System.out.println("Logout_Test() - App Run > 7 Second Wait...");
 		
-		driver.manage().timeouts().implicitlyWait(long_Sleep_Seconds_10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Tranggle_Method.long_Sleep_Seconds_10, TimeUnit.SECONDS);
 		
 		try {
 			System.out.println("Logout_Test() - Logout Start");

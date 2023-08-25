@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-	<test verbose="2" preserve-order="true"
+	<test verbose="5" preserve-order="true"
 		name="Tranggle_App">
 		<classes>
 			<class name="Tranggle_App.App_Permission_Check" />
 			<class name="Tranggle_App.App_Run" />
 			<class name="Tranggle_App.Normal_Login" />
 			<class name="Tranggle_App.Front_Popup_Close" />
+			<class name="Tranggle_App.Do_not_Watch_Front_Popup_Check" />
 		</classes>
 	</test>
 </suite>
