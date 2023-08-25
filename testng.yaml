@@ -1,0 +1,10 @@
+name: All Test Suite
+configFailurePolicy: skip
+tests:
+  - name: Tranggle_App
+  verbose: 2
+  classes:
+    - Tranggle_App.App_Permission_Check
+    - Tranggle_App.App_Run
+    - Tranggle_App.Normal_Login
+
