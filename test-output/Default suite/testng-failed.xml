@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Tranggle_App.Image_Compare_Check">
+      <class name="Tranggle_App.Front_Popup_Close">
         <methods>
-          <include name="Image_Compare_Check_Test"/>
-          <include name="SetDriver"/>
+          <include name="Front_Popup_Close_Test"/>
           <include name="EndDriver"/>
+          <include name="SetDriver"/>
         </methods>
-      </class> <!-- Tranggle_App.Image_Compare_Check -->
+      </class> <!-- Tranggle_App.Front_Popup_Close -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

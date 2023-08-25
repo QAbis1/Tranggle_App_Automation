@@ -7,6 +7,7 @@
 			<class name="Tranggle_App.App_Permission_Check"/>
             <class name="Tranggle_App.App_Run"/>
             <class name="Tranggle_App.Normal_Login"/>
+            <class name="Tranggle_App.Front_Popup_Close"/>
         </classes>
     </test>
 </suite>

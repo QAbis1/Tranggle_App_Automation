@@ -45,6 +45,8 @@ public class Tranggle_Method {
 	private static String loginpage_Login_Btn_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.TextView[2]";
 	private static String loginpage_Login_Status_Checkbox_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.CheckBox";
 	private static String loginpage_Login_Status_Check_Txt_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.TextView";
+	private static String loginpage_Signup_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.TextView[1]";
+
 	private static String loginpage_Guest_In_Btn_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.TextView[2]";
 	private static String guest_In_Popup_Title_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.TextView";
 	private static String guest_In_Popup_Continue_Btn_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView[1]";
@@ -118,6 +120,7 @@ public class Tranggle_Method {
 	public static int long_Sleep_Seconds_5 = 5;
 	public static int long_Sleep_Seconds_7 = 7;
 	public static int long_Sleep_Seconds_10 = 10;
+	public static int long_Sleep_Seconds_30 = 30;
 
 	public static int short_Sleep_Times_500 = 500;
 	public static int short_Sleep_Times_1000 = 1000;
@@ -493,7 +496,7 @@ public class Tranggle_Method {
 
 			health_Inf_Access_Allow_Popup_Allowed.click();
 			Thread.sleep(normal_Sleep_Times_3000);
-			driver.manage().timeouts().implicitlyWait(long_Sleep_Seconds_10, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(long_Sleep_Seconds_30, TimeUnit.SECONDS);
 
 		} else {
 			System.out.println(
@@ -610,20 +613,22 @@ public class Tranggle_Method {
 		double similarity = compareImage(referenceImage, elementImage);
 
 		if (similarity >= 0.8) {
-			System.out.println("LoginPage_Login_Status_Check_Unchecked() - Image Compare Success - similarity : " + similarity);
-			
+			System.out.println(
+					"LoginPage_Login_Status_Check_Unchecked() - Image Compare Success - similarity : " + similarity);
+
 			loginpage_Login_Status_CheckBox.click();
 			Thread.sleep(short_Sleep_Times_1000);
 
 			System.out.println(
 					"LoginPage_Login_Status_Check_Unchecked() - loginpage_Login_Statuc_Checkbox Unchecked Success");
 		} else {
-			System.out.println("LoginPage_Login_Status_Check_Unchecked() - Image Compage Fail - similarity : " + similarity);
+			System.out.println(
+					"LoginPage_Login_Status_Check_Unchecked() - Image Compage Fail - similarity : " + similarity);
 
 			throw new Exception("로그인페이지 진입 실패 or 로그인 페이지 > 로그인 상태 유지 앨리먼트 찾기 실패했습니다.");
 		}
 	}
-	
+
 	public static void LoginPage_Login_Status_Check_Checked(AppiumDriver<MobileElement> driver) throws Exception {
 		System.out.println("Tranggle_Method Class > LoginPage_Login_Status_Check_Checked() - Start");
 
@@ -651,15 +656,17 @@ public class Tranggle_Method {
 		double similarity = compareImage(referenceImage, elementImage);
 
 		if (similarity >= 0.8) {
-			System.out.println("LoginPage_Login_Status_Check_Checked() - Image Compare Success - similarity : " + similarity);
-			
+			System.out.println(
+					"LoginPage_Login_Status_Check_Checked() - Image Compare Success - similarity : " + similarity);
+
 			loginpage_Login_Status_CheckBox.click();
 			Thread.sleep(short_Sleep_Times_1000);
 
 			System.out.println(
 					"LoginPage_Login_Status_Check_Checked() - loginpage_Login_Statuc_Checkbox Checked Success");
 		} else {
-			System.out.println("LoginPage_Login_Status_Check_Checked() - Image Compage Fail - similarity : " + similarity);
+			System.out.println(
+					"LoginPage_Login_Status_Check_Checked() - Image Compage Fail - similarity : " + similarity);
 
 			throw new Exception("로그인페이지 진입 실패 or 로그인 페이지 > 로그인 상태 유지 앨리먼트 찾기 실패했습니다.");
 		}
@@ -810,20 +817,22 @@ public class Tranggle_Method {
 		}
 	}
 
-	public static void Front_PopUp_Close(AppiumDriver<MobileElement> driver) {
+	public static void Front_PopUp_Close(AppiumDriver<MobileElement> driver) throws Exception {
 		System.out.println("Tranggle_Method Class > Front_PopUp_Close() - Start");
 
 		try {
 			MobileElement front_Popup_Close_Btn = driver.findElementByXPath(front_Popup_Close_Btn_Xpath);
 
 			front_Popup_Close_Btn.click();
-
-			System.out.println("Front_PopUp_Close - Close Button Click");
+			Thread.sleep(short_Sleep_Times_1000);
 
 			driver.manage().timeouts().implicitlyWait(long_Sleep_Seconds_7, TimeUnit.SECONDS);
+
 		} catch (Exception e) {
 			// TODO: handle exception
+			System.out.println("Front_PopUp_Close() - Front_Popup_Close Failure > e : " + e);
 			e.printStackTrace();
+
 		}
 	}
 

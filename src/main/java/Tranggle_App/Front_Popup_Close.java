@@ -74,8 +74,8 @@ public class Front_Popup_Close {
 	}
 
 	@Test
-	public void Front_Popup_Close_Test() throws InterruptedException {
-		String login_TrbShooting_Login_Problems_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.TextView[1]";
+	public void Front_Popup_Close_Test() throws Exception {
+		String loginpage_Signup_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.TextView[1]";
 		String front_Popup_Check_Text_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.CheckBox";
 		String home_Profil_Guest_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.TextView[1]";
 		String home_Pedometer_Title_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.FrameLayout/android.widget.TextView"; 
@@ -89,21 +89,21 @@ public class Front_Popup_Close {
 		System.out.println("Front_Popup_Close_Test() - 앱 실행 체크 - 앨리먼트 가져오기 시작");
 
 		try {
-			System.out.println("Front_Popup_Close_Test() - 실행 후 로그인 페이지 일 경우, 로그인 페이지 > 로그인 문제 해결 버튼 엘리먼트 가져오기 전");
+			System.out.println("Front_Popup_Close_Test() - 실행 후 로그인 페이지 일 경우, 로그인 페이지 > 회원가입 버튼 엘리먼트 가져오기 전");
+			
+			MobileElement loginpage_Signup_Btn = driver.findElementByXPath(loginpage_Signup_Xpath);
+			String loginpage_Signup_Btn_Text = loginpage_Signup_Btn.getText();
 
-			MobileElement loginpage_TrbShooting_Login_Prb = loginpage_TrbShooting_Login_Prb = driver.findElementByXPath(login_TrbShooting_Login_Problems_Xpath);
-			String loginpage_TrbShooting_Login_Prb_Text = loginpage_TrbShooting_Login_Prb.getText();
-
-			if (loginpage_TrbShooting_Login_Prb_Text.equals("로그인 문제 해결")) {
-				System.out.println("Front_Popup_Close_Test() - loginpage login processing.... -> loginpage_TrbShooting_Login_Prb_Text : "
-						+ loginpage_TrbShooting_Login_Prb_Text);
-				Tranggle_Method.Loginpage_Guest_In(driver);
+			if (loginpage_Signup_Btn_Text.equals("회원가입")) {
+				System.out.println("Front_Popup_Close_Test() - loginpage login processing.... -> loginpage_Signup_Btn_Text : "
+						+ loginpage_Signup_Btn_Text);
+				Tranggle_Method.Login(driver);
 				Tranggle_Method.Front_PopUp_Close(driver);
 			} else {
-				System.out.println("Front_Popup_Close_Test() - App_Run Failure -> loginpage_TrbShooting_Login_Prb_Text : "
-						+ loginpage_TrbShooting_Login_Prb_Text);
+				System.out.println("Front_Popup_Close_Test() - App_Run Failure -> loginpage_Signup_Btn_Text : "
+						+ loginpage_Signup_Btn_Text);
 
-				throw new InterruptedException("로그인 페이지 > 로그인 문제 해결 버튼 찾기 실패하였습니다.");
+				throw new InterruptedException("로그인 페이지 진입 및 [회원가입] 버튼 앨리먼트 찾기 실패했습니다.");
 			}
 
 		} catch (Exception e) {
@@ -112,18 +112,25 @@ public class Front_Popup_Close {
 			Tranggle_Method.Front_PopUp_Close(driver);
 			e.printStackTrace();
 			
-			throw new InterruptedException("실행 후 홈 화면 일 경우, 전면 팝업 > 닫기 버튼 클릭에 실패하였습니다.");
+			throw new InterruptedException("실행 후 홈 화면이 아니거나 전면 팝업 > 닫기 버튼 클릭에 실패하였습니다.");
 		}
 		
-		MobileElement home_Pedometer_Title = driver.findElementByXPath(home_Pedometer_Title_Xpath);
-		String home_Pedometer_Title_Text = home_Pedometer_Title.getText();
-		
-		if (home_Pedometer_Title_Text.equals("만보기")) {
-			System.out.println("Front_Popup_Close_Test() - Front_Popup_Close Success -> home_Pedometer_Title_Text : " + home_Pedometer_Title_Text);
-		} else {
-			System.out.println("Front_Popup_Close_Test() - Front_Popup_Close Failure -> home_Pedometer_Title_Text : " + home_Pedometer_Title_Text);
+		try {
+			MobileElement home_Pedometer_Title = driver.findElementByXPath(home_Pedometer_Title_Xpath);
+			String home_Pedometer_Title_Text = home_Pedometer_Title.getText();
 			
-			throw new InterruptedException("실행 후 홈 화면 일 경우, 전면 팝업 종료 실패하였습니다.");
+			if (home_Pedometer_Title_Text.equals("만보기")) {
+				System.out.println("Front_Popup_Close_Test() - Front_Popup_Close Success -> home_Pedometer_Title_Text : " + home_Pedometer_Title_Text);
+			} else {
+				System.out.println("Front_Popup_Close_Test() - Front_Popup_Close Failure -> home_Pedometer_Title_Text : " + home_Pedometer_Title_Text);
+				
+				throw new InterruptedException("실행 후 홈 화면 일 경우, 전면 팝업 종료 실패하였습니다.");
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Front_Popup_Close_Test() - Front_Popup Close Failure > e : " + e);
+			
+			throw new InterruptedException("전면 팝업 종료 or 만보기 타이틀 문구 앨리먼트 찾기 실패했습니다.");
 		}
 	}
 
