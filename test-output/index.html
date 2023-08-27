@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">5 methods,   5 passed</span>
+                    <span class="method-stats">6 methods,   6 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -120,6 +120,11 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-All_Test_Suite" title="Tranggle_App.Front_Popup_Close" class="method navigator-link" hash-for-method="Front_Popup_Close_Test">Front_Popup_Close_Test</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-All_Test_Suite" title="Tranggle_App.Naver_Login" class="method navigator-link" hash-for-method="Naver_Login_Test">Naver_Login_Test</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -187,6 +192,21 @@
           <div class="suite-All_Test_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
+              <span class="class-name">Tranggle_App.Naver_Login</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Naver_Login_Test">
+                  </a> <!-- Naver_Login_Test -->
+                  <span class="method-name">Naver_Login_Test</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-All_Test_Suite-class-passed -->
+          <div class="suite-All_Test_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
               <span class="class-name">Tranggle_App.Normal_Login</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -231,6 +251,7 @@
       &lt;class name=&quot;Tranggle_App.Normal_Login&quot;/&gt;
       &lt;class name=&quot;Tranggle_App.Front_Popup_Close&quot;/&gt;
       &lt;class name=&quot;Tranggle_App.Do_not_Watch_Front_Popup_Check&quot;/&gt;
+      &lt;class name=&quot;Tranggle_App.Naver_Login&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Tranggle_App --&gt;
 &lt;/suite&gt; &lt;!-- All Test Suite --&gt;
@@ -244,7 +265,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Tranggle_App (5 classes)</span>
+                <span class="test-name">Tranggle_App (6 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -270,27 +291,31 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(5);
+data.addRows(6);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'App_Permission_Check_Test')
 data.setCell(0, 2, 'Tranggle_App.App_Permission_Check')
-data.setCell(0, 3, 42833);
+data.setCell(0, 3, 37624);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'Do_not_Watch_Front_Popup_Check_Test')
 data.setCell(1, 2, 'Tranggle_App.Do_not_Watch_Front_Popup_Check')
-data.setCell(1, 3, 25295);
+data.setCell(1, 3, 25147);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'Front_Popup_Close_Test')
-data.setCell(2, 2, 'Tranggle_App.Front_Popup_Close')
-data.setCell(2, 3, 12246);
+data.setCell(2, 1, 'Naver_Login_Test')
+data.setCell(2, 2, 'Tranggle_App.Naver_Login')
+data.setCell(2, 3, 12933);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'Normal_Login_Test')
-data.setCell(3, 2, 'Tranggle_App.Normal_Login')
-data.setCell(3, 3, 11155);
+data.setCell(3, 1, 'Front_Popup_Close_Test')
+data.setCell(3, 2, 'Tranggle_App.Front_Popup_Close')
+data.setCell(3, 3, 11124);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'App_Run_Test')
-data.setCell(4, 2, 'Tranggle_App.App_Run')
-data.setCell(4, 3, 1954);
+data.setCell(4, 1, 'Normal_Login_Test')
+data.setCell(4, 2, 'Tranggle_App.Normal_Login')
+data.setCell(4, 3, 9868);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'App_Run_Test')
+data.setCell(5, 2, 'Tranggle_App.App_Run')
+data.setCell(5, 3, 1578);
 window.suiteTableData['All_Test_Suite']= { tableData: data, tableDiv: 'times-div-All_Test_Suite'}
 return data;
 }
@@ -328,71 +353,86 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">App_Permission_Check_Test</span>
-                <span class="method-start">7924 ms</span>
+                <span class="method-start">7122 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">EndDriver</span>
-                <span class="method-start">50759 ms</span>
+                <span class="method-start">44749 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">Tranggle_App.App_Run</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">SetDriver</span>
-                <span class="method-start">68059 ms</span>
+                <span class="method-start">60488 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">App_Run_Test</span>
-                <span class="method-start">73831 ms</span>
+                <span class="method-start">66373 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">EndDriver</span>
-                <span class="method-start">75787 ms</span>
+                <span class="method-start">67952 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">Tranggle_App.Normal_Login</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">SetDriver</span>
-                <span class="method-start">76122 ms</span>
+                <span class="method-start">68318 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">Normal_Login_Test</span>
-                <span class="method-start">81907 ms</span>
+                <span class="method-start">74178 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">EndDriver</span>
-                <span class="method-start">93063 ms</span>
+                <span class="method-start">84048 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">Tranggle_App.Front_Popup_Close</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">SetDriver</span>
-                <span class="method-start">93604 ms</span>
+                <span class="method-start">84457 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">Front_Popup_Close_Test</span>
-                <span class="method-start">99425 ms</span>
+                <span class="method-start">90292 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">EndDriver</span>
-                <span class="method-start">111672 ms</span>
+                <span class="method-start">101418 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">Tranggle_App.Do_not_Watch_Front_Popup_Check</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">SetDriver</span>
-                <span class="method-start">112060 ms</span>
+                <span class="method-start">101778 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">Do_not_Watch_Front_Popup_Check_Test</span>
-                <span class="method-start">117914 ms</span>
+                <span class="method-start">107446 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">EndDriver</span>
-                <span class="method-start">143211 ms</span>
+                <span class="method-start">132594 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">Tranggle_App.Naver_Login</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">SetDriver</span>
+                <span class="method-start">133031 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">Naver_Login_Test</span>
+                <span class="method-start">138739 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">EndDriver</span>
+                <span class="method-start">151673 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

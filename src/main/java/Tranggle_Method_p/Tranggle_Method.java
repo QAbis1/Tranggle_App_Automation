@@ -20,7 +20,7 @@ public class Tranggle_Method {
 	private static String front_Popup_CheckBox_Txt_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.CheckBox";
 	private static String front_Popup_Close_Btn_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ImageView";
 	private static String front_Popup_CheckBox_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.CheckBox";
-	
+
 	// 트랭글 홈 화면
 	private static String home_Profil_Nickname_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.TextView[1]";
 	private static String home_Profil_Guest_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.TextView[1]";
@@ -46,12 +46,22 @@ public class Tranggle_Method {
 	private static String loginpage_Login_Status_Checkbox_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.CheckBox";
 	private static String loginpage_Login_Status_Check_Txt_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.TextView";
 	private static String loginpage_Signup_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.TextView[1]";
+	private static String loginpage_Naver_Icon_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[4]/android.widget.ImageButton[1]";
+	private static String loginpage_Kakao_Icon_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[4]/android.widget.ImageButton[2]";
+	private static String loginpage_Facebook_Icon_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[4]/android.widget.ImageButton[3]";
 
 	private static String loginpage_Guest_In_Btn_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.TextView[2]";
 	private static String guest_In_Popup_Title_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.TextView";
 	private static String guest_In_Popup_Continue_Btn_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView[1]";
 	private static String guest_In_Popup_Login_Btn_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView[2]";
 	private static String guest_In_Popup_Create_Btn_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView[3]";
+
+	// 트랭글 > 로그인 > 네이버 로그인 화면
+	private static String nloginpage_Title_Xpath = "//android.view.View[@content-desc=\"네이버\"]/android.widget.TextView";
+	private static String nloginpage_ID_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View[2]/android.view.View/android.view.View[2]/android.view.View[2]/android.view.View/android.view.View[1]/android.view.View/android.widget.EditText";
+	private static String nloginpage_PW_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View[2]/android.view.View/android.view.View[2]/android.view.View[2]/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText";
+	private static String nloginpage_Login_Btn_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View[2]/android.view.View/android.view.View[2]/android.widget.Button";
+	private static String nloginpage_Status_Checkbox_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View[2]/android.view.View/android.view.View[2]/android.view.View[3]/android.view.View";
 
 	// 트랭글 앱 접근 권한 안내 화면
 	private static String app_Access_Rights_Guide_Title_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout[1]/android.widget.TextView[1]";
@@ -112,6 +122,10 @@ public class Tranggle_Method {
 	// 트랭글 테스트 시 로그인 계정 정보 변수
 	private static String normal_Login_ID = "koreatest67";
 	private static String normal_Login_PW = "test1234@";
+
+	// 트랭글 테스트 시 네이버 로그인 계정 정보 변수
+	private static String naver_Login_ID = "starbictoli1";
+	private static String naver_Login_PW = "1@qordlf";
 
 	// 타임 대기 시간 변수 선언
 	public static int short_Sleep_Seconds_1 = 1;
@@ -612,7 +626,7 @@ public class Tranggle_Method {
 		// 이미지 비교
 		double similarity = compareImage(referenceImage, elementImage);
 
-		if (similarity >= 0.8) {
+		if (similarity >= 0.9) {
 			System.out.println(
 					"LoginPage_Login_Status_Check_Unchecked() - Image Compare Success - similarity : " + similarity);
 
@@ -655,7 +669,7 @@ public class Tranggle_Method {
 		// 이미지 비교
 		double similarity = compareImage(referenceImage, elementImage);
 
-		if (similarity >= 0.8) {
+		if (similarity >= 0.9) {
 			System.out.println(
 					"LoginPage_Login_Status_Check_Checked() - Image Compare Success - similarity : " + similarity);
 
@@ -705,6 +719,76 @@ public class Tranggle_Method {
 
 		driver.manage().timeouts().implicitlyWait(long_Sleep_Seconds_10, TimeUnit.SECONDS);
 
+	}
+
+	public static void Loginpage_Naver_Icon_Click(AppiumDriver<MobileElement> driver) throws Exception {
+		System.out.println("Tranggle_Method Class > Loginpage_Naver_Icon_Click() - Start");
+
+		// 앨리먼트 선택
+		MobileElement loginpage_Login_Naver_Icon = driver.findElementByXPath(loginpage_Naver_Icon_Xpath);
+
+		// 앨리먼트의 위치와 크기 가져오기
+		org.openqa.selenium.Point elementLocation = loginpage_Login_Naver_Icon.getLocation();
+		Dimension elementSize = loginpage_Login_Naver_Icon.getSize();
+
+		// 스크린 샷 전체 화면 이미지 가져오기
+		File screenshotFile = driver.getScreenshotAs(org.openqa.selenium.OutputType.FILE);
+		BufferedImage screenshotImage = ImageIO.read(screenshotFile);
+
+		// 앨리먼트의 부분 이미지 추출
+		BufferedImage elementImage = screenshotImage.getSubimage(elementLocation.getX(), elementLocation.getY(),
+				elementSize.getWidth(), elementSize.getHeight());
+
+		// 기존 이미지 로드
+		BufferedImage referenceImage = ImageIO
+				.read(new File("E:\\eclipse_workspace\\Tranggle_App\\src\\main\\resources\\loginpage_naver_icon.png"));
+
+		// 이미지 비교
+		double similarity = compareImage(referenceImage, elementImage);
+
+		if (similarity >= 0.9) {
+			System.out.println("Loginpage_Naver_Icon_Click() - Image Compare Success - similarity : " + similarity);
+
+			loginpage_Login_Naver_Icon.click();
+			driver.manage().timeouts().implicitlyWait(long_Sleep_Seconds_30, TimeUnit.SECONDS);
+			Thread.sleep(short_Sleep_Times_1000);
+
+			System.out.println("Loginpage_Naver_Icon_Click() - loginpage_Naver_Loing_Icon Click Success");
+		} else {
+			System.out.println("Naver_Login() - Image Compage Fail - similarity : " + similarity);
+
+			throw new Exception("로그인페이지 진입 실패 or 로그인 페이지 > 로그인 상태 유지 앨리먼트 찾기 실패했습니다.");
+		}
+	}
+
+	public static void Naver_Login_Check(AppiumDriver<MobileElement> driver) throws Exception {
+		System.out.println("Tranggle_Method Class > Naver_Login_Check() - Start");
+
+		MobileElement nloginpage_Title = driver.findElementByXPath(nloginpage_Title_Xpath);
+		String nloginpage_Title_Text = nloginpage_Title.getText();
+
+		if (nloginpage_Title_Text.equals("네이버")) {
+			System.out.println(
+					"Naver_Login_Check() - nloginpage Move Success > nloginpage_Title_Text : " + nloginpage_Title_Text);
+
+			MobileElement nloginpage_ID = driver.findElementByXPath(nloginpage_ID_Xpath);
+			nloginpage_ID.sendKeys(naver_Login_ID);
+
+			MobileElement nloginpage_PW = driver.findElementByXPath(nloginpage_PW_Xpath);
+			nloginpage_PW.sendKeys(naver_Login_PW);
+
+			Thread.sleep(short_Sleep_Times_1000);
+
+			MobileElement nloginpage_Login_Btn = driver.findElementByXPath(nloginpage_Login_Btn_Xpath);
+			nloginpage_Login_Btn.click();
+
+			driver.manage().timeouts().implicitlyWait(long_Sleep_Seconds_30, TimeUnit.SECONDS);
+			Thread.sleep(short_Sleep_Times_1000);
+		} else {
+			System.out.println("Naver_Login_Check() - nloginpage Move Failure > nloginpage_Title_Text : " + nloginpage_Title_Text);
+
+			throw new Exception("네이버 로그인 화면 이동 및 네이버 로그인 화면 > 타이틀 앨리먼트 찾기 실패했습니다.");
+		}
 	}
 
 	public static void Logout(AppiumDriver<MobileElement> driver) throws Exception {

@@ -70,16 +70,18 @@ public class Image_Compare_Check {
 	public void Image_Compare_Check_Test() throws Exception {
 		String loginpage_Login_Status_Checkbox_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.CheckBox";
 		String Front_Popup_Close_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ImageView";
-		
+		String loginpage_Naver_Icon_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[4]/android.widget.ImageButton[1]";
+		String loginpage_Kakao_Icon_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[4]/android.widget.ImageButton[2]";
+		String loginpage_Facebook_Icon_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[4]/android.widget.ImageButton[3]";
 		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		//testcode 
-		Tranggle_Method.Login(driver);
+		//Tranggle_Method.Login(driver);
 		
 		//앨리먼트 선택
 		MobileElement loginpage_Login_Status_CheckBox = driver
-				.findElementByXPath(Front_Popup_Close_Xpath);
+				.findElementByXPath(loginpage_Facebook_Icon_Xpath);
 
 		//앨리먼트의 위치와 크기 가져오기
 		org.openqa.selenium.Point elementLocation = loginpage_Login_Status_CheckBox.getLocation();

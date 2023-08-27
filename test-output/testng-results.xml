@@ -1,77 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-08-25T19:22:51 KST" name="All Test Suite" finished-at="2023-08-25T19:25:14 KST" duration-ms="143612">
+  <suite started-at="2023-08-27T19:51:04 KST" name="All Test Suite" finished-at="2023-08-27T19:53:36 KST" duration-ms="152065">
     <groups>
     </groups>
-    <test started-at="2023-08-25T19:22:51 KST" name="Tranggle_App" finished-at="2023-08-25T19:25:14 KST" duration-ms="143612">
-      <class name="Tranggle_App.Normal_Login">
-        <test-method is-config="true" signature="SetDriver()[pri:0, instance:Tranggle_App.Normal_Login@72e5a8e]" started-at="2023-08-25T19:24:07 KST" name="SetDriver" finished-at="2023-08-25T19:24:13 KST" duration-ms="5784" status="PASS">
+    <test started-at="2023-08-27T19:51:04 KST" name="Tranggle_App" finished-at="2023-08-27T19:53:36 KST" duration-ms="152065">
+      <class name="Tranggle_App.Naver_Login">
+        <test-method is-config="true" signature="SetDriver()[pri:0, instance:Tranggle_App.Naver_Login@7db12bb6]" started-at="2023-08-27T19:53:17 KST" name="SetDriver" finished-at="2023-08-27T19:53:23 KST" duration-ms="5708" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetDriver -->
-        <test-method signature="Normal_Login_Test()[pri:0, instance:Tranggle_App.Normal_Login@72e5a8e]" started-at="2023-08-25T19:24:13 KST" name="Normal_Login_Test" finished-at="2023-08-25T19:24:24 KST" duration-ms="11155" status="PASS">
+        <test-method signature="Naver_Login_Test()[pri:0, instance:Tranggle_App.Naver_Login@7db12bb6]" started-at="2023-08-27T19:53:23 KST" name="Naver_Login_Test" finished-at="2023-08-27T19:53:36 KST" duration-ms="12933" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Naver_Login_Test -->
+        <test-method is-config="true" signature="EndDriver()[pri:0, instance:Tranggle_App.Naver_Login@7db12bb6]" started-at="2023-08-27T19:53:36 KST" name="EndDriver" finished-at="2023-08-27T19:53:36 KST" duration-ms="381" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EndDriver -->
+      </class> <!-- Tranggle_App.Naver_Login -->
+      <class name="Tranggle_App.Normal_Login">
+        <test-method is-config="true" signature="SetDriver()[pri:0, instance:Tranggle_App.Normal_Login@53aac487]" started-at="2023-08-27T19:52:12 KST" name="SetDriver" finished-at="2023-08-27T19:52:18 KST" duration-ms="5860" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetDriver -->
+        <test-method signature="Normal_Login_Test()[pri:0, instance:Tranggle_App.Normal_Login@53aac487]" started-at="2023-08-27T19:52:18 KST" name="Normal_Login_Test" finished-at="2023-08-27T19:52:28 KST" duration-ms="9868" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Normal_Login_Test -->
-        <test-method is-config="true" signature="EndDriver()[pri:0, instance:Tranggle_App.Normal_Login@72e5a8e]" started-at="2023-08-25T19:24:24 KST" name="EndDriver" finished-at="2023-08-25T19:24:24 KST" duration-ms="541" status="PASS">
+        <test-method is-config="true" signature="EndDriver()[pri:0, instance:Tranggle_App.Normal_Login@53aac487]" started-at="2023-08-27T19:52:28 KST" name="EndDriver" finished-at="2023-08-27T19:52:28 KST" duration-ms="409" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EndDriver -->
       </class> <!-- Tranggle_App.Normal_Login -->
       <class name="Tranggle_App.App_Permission_Check">
-        <test-method is-config="true" signature="SetDriver()[pri:0, instance:Tranggle_App.App_Permission_Check@2d710f1a]" started-at="2023-08-25T19:22:51 KST" name="SetDriver" finished-at="2023-08-25T19:22:59 KST" duration-ms="7918" status="PASS">
+        <test-method is-config="true" signature="SetDriver()[pri:0, instance:Tranggle_App.App_Permission_Check@59505b48]" started-at="2023-08-27T19:51:04 KST" name="SetDriver" finished-at="2023-08-27T19:51:11 KST" duration-ms="7117" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetDriver -->
-        <test-method signature="App_Permission_Check_Test()[pri:0, instance:Tranggle_App.App_Permission_Check@2d710f1a]" started-at="2023-08-25T19:22:59 KST" name="App_Permission_Check_Test" finished-at="2023-08-25T19:23:41 KST" duration-ms="42833" status="PASS">
+        <test-method signature="App_Permission_Check_Test()[pri:0, instance:Tranggle_App.App_Permission_Check@59505b48]" started-at="2023-08-27T19:51:11 KST" name="App_Permission_Check_Test" finished-at="2023-08-27T19:51:49 KST" duration-ms="37624" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- App_Permission_Check_Test -->
-        <test-method is-config="true" signature="EndDriver()[pri:0, instance:Tranggle_App.App_Permission_Check@2d710f1a]" started-at="2023-08-25T19:23:41 KST" name="EndDriver" finished-at="2023-08-25T19:23:59 KST" duration-ms="17299" status="PASS">
+        <test-method is-config="true" signature="EndDriver()[pri:0, instance:Tranggle_App.App_Permission_Check@59505b48]" started-at="2023-08-27T19:51:49 KST" name="EndDriver" finished-at="2023-08-27T19:52:04 KST" duration-ms="15738" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EndDriver -->
       </class> <!-- Tranggle_App.App_Permission_Check -->
       <class name="Tranggle_App.Do_not_Watch_Front_Popup_Check">
-        <test-method is-config="true" signature="SetDriver()[pri:0, instance:Tranggle_App.Do_not_Watch_Front_Popup_Check@53aac487]" started-at="2023-08-25T19:24:43 KST" name="SetDriver" finished-at="2023-08-25T19:24:49 KST" duration-ms="5853" status="PASS">
+        <test-method is-config="true" signature="SetDriver()[pri:0, instance:Tranggle_App.Do_not_Watch_Front_Popup_Check@273e7444]" started-at="2023-08-27T19:52:46 KST" name="SetDriver" finished-at="2023-08-27T19:52:51 KST" duration-ms="5668" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetDriver -->
-        <test-method signature="Do_not_Watch_Front_Popup_Check_Test()[pri:0, instance:Tranggle_App.Do_not_Watch_Front_Popup_Check@53aac487]" started-at="2023-08-25T19:24:49 KST" name="Do_not_Watch_Front_Popup_Check_Test" finished-at="2023-08-25T19:25:14 KST" duration-ms="25295" status="PASS">
+        <test-method signature="Do_not_Watch_Front_Popup_Check_Test()[pri:0, instance:Tranggle_App.Do_not_Watch_Front_Popup_Check@273e7444]" started-at="2023-08-27T19:52:51 KST" name="Do_not_Watch_Front_Popup_Check_Test" finished-at="2023-08-27T19:53:17 KST" duration-ms="25147" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Do_not_Watch_Front_Popup_Check_Test -->
-        <test-method is-config="true" signature="EndDriver()[pri:0, instance:Tranggle_App.Do_not_Watch_Front_Popup_Check@53aac487]" started-at="2023-08-25T19:25:14 KST" name="EndDriver" finished-at="2023-08-25T19:25:14 KST" duration-ms="389" status="PASS">
+        <test-method is-config="true" signature="EndDriver()[pri:0, instance:Tranggle_App.Do_not_Watch_Front_Popup_Check@273e7444]" started-at="2023-08-27T19:53:17 KST" name="EndDriver" finished-at="2023-08-27T19:53:17 KST" duration-ms="436" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EndDriver -->
       </class> <!-- Tranggle_App.Do_not_Watch_Front_Popup_Check -->
       <class name="Tranggle_App.App_Run">
-        <test-method is-config="true" signature="SetDriver()[pri:0, instance:Tranggle_App.App_Run@7d4f9aae]" started-at="2023-08-25T19:23:59 KST" name="SetDriver" finished-at="2023-08-25T19:24:04 KST" duration-ms="5772" status="PASS">
+        <test-method is-config="true" signature="SetDriver()[pri:0, instance:Tranggle_App.App_Run@54e1c68b]" started-at="2023-08-27T19:52:04 KST" name="SetDriver" finished-at="2023-08-27T19:52:10 KST" duration-ms="5885" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetDriver -->
-        <test-method signature="App_Run_Test()[pri:0, instance:Tranggle_App.App_Run@7d4f9aae]" started-at="2023-08-25T19:24:04 KST" name="App_Run_Test" finished-at="2023-08-25T19:24:06 KST" duration-ms="1954" status="PASS">
+        <test-method signature="App_Run_Test()[pri:0, instance:Tranggle_App.App_Run@54e1c68b]" started-at="2023-08-27T19:52:10 KST" name="App_Run_Test" finished-at="2023-08-27T19:52:12 KST" duration-ms="1578" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- App_Run_Test -->
-        <test-method is-config="true" signature="EndDriver()[pri:0, instance:Tranggle_App.App_Run@7d4f9aae]" started-at="2023-08-25T19:24:06 KST" name="EndDriver" finished-at="2023-08-25T19:24:07 KST" duration-ms="335" status="PASS">
+        <test-method is-config="true" signature="EndDriver()[pri:0, instance:Tranggle_App.App_Run@54e1c68b]" started-at="2023-08-27T19:52:12 KST" name="EndDriver" finished-at="2023-08-27T19:52:12 KST" duration-ms="365" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EndDriver -->
       </class> <!-- Tranggle_App.App_Run -->
       <class name="Tranggle_App.Front_Popup_Close">
-        <test-method is-config="true" signature="SetDriver()[pri:0, instance:Tranggle_App.Front_Popup_Close@54e1c68b]" started-at="2023-08-25T19:24:24 KST" name="SetDriver" finished-at="2023-08-25T19:24:30 KST" duration-ms="5820" status="PASS">
+        <test-method is-config="true" signature="SetDriver()[pri:0, instance:Tranggle_App.Front_Popup_Close@52b1beb6]" started-at="2023-08-27T19:52:28 KST" name="SetDriver" finished-at="2023-08-27T19:52:34 KST" duration-ms="5835" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetDriver -->
-        <test-method signature="Front_Popup_Close_Test()[pri:0, instance:Tranggle_App.Front_Popup_Close@54e1c68b]" started-at="2023-08-25T19:24:30 KST" name="Front_Popup_Close_Test" finished-at="2023-08-25T19:24:42 KST" duration-ms="12246" status="PASS">
+        <test-method signature="Front_Popup_Close_Test()[pri:0, instance:Tranggle_App.Front_Popup_Close@52b1beb6]" started-at="2023-08-27T19:52:34 KST" name="Front_Popup_Close_Test" finished-at="2023-08-27T19:52:45 KST" duration-ms="11124" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Front_Popup_Close_Test -->
-        <test-method is-config="true" signature="EndDriver()[pri:0, instance:Tranggle_App.Front_Popup_Close@54e1c68b]" started-at="2023-08-25T19:24:42 KST" name="EndDriver" finished-at="2023-08-25T19:24:43 KST" duration-ms="387" status="PASS">
+        <test-method is-config="true" signature="EndDriver()[pri:0, instance:Tranggle_App.Front_Popup_Close@52b1beb6]" started-at="2023-08-27T19:52:45 KST" name="EndDriver" finished-at="2023-08-27T19:52:46 KST" duration-ms="360" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EndDriver -->

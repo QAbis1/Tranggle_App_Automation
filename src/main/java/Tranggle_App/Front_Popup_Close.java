@@ -68,7 +68,7 @@ public class Front_Popup_Close {
 
 		System.out.println("Front_Popup_Close_Test() - Start > 7 Second Wait...");
 
-		driver.manage().timeouts().implicitlyWait(Tranggle_Method.long_Sleep_Seconds_10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Tranggle_Method.long_Sleep_Seconds_30, TimeUnit.SECONDS);
 
 		System.out.println("Front_Popup_Close_Test() - 앱 실행 체크 - 앨리먼트 가져오기 시작");
 
