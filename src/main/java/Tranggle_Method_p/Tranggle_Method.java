@@ -724,26 +724,27 @@ public class Tranggle_Method {
 	public static void Loginpage_Naver_Icon_Click(AppiumDriver<MobileElement> driver) throws Exception {
 		System.out.println("Tranggle_Method Class > Loginpage_Naver_Icon_Click() - Start");
 
-		// 앨리먼트 선택
+		// 로그인 페이지 > 네이버 아이콘 앨리먼트 가져옮
 		MobileElement loginpage_Login_Naver_Icon = driver.findElementByXPath(loginpage_Naver_Icon_Xpath);
 
-		// 앨리먼트의 위치와 크기 가져오기
+		// 네이버 아이콘 > 앨리먼트의 위치와 크기 가져오기
 		org.openqa.selenium.Point elementLocation = loginpage_Login_Naver_Icon.getLocation();
 		Dimension elementSize = loginpage_Login_Naver_Icon.getSize();
 
-		// 스크린 샷 전체 화면 이미지 가져오기
+		// 가져온 앨리먼트를 스크린 샷 전체 화면 이미지 가져온 파일 읽음
 		File screenshotFile = driver.getScreenshotAs(org.openqa.selenium.OutputType.FILE);
 		BufferedImage screenshotImage = ImageIO.read(screenshotFile);
 
-		// 앨리먼트의 부분 이미지 추출
+		// 가져온 앨리먼트의 부분 이미지 추출 (함주 파라미터 값으로 앨리먼트 x, y 좌표와 가로 / 세로 크키값을 넘겨줆
 		BufferedImage elementImage = screenshotImage.getSubimage(elementLocation.getX(), elementLocation.getY(),
 				elementSize.getWidth(), elementSize.getHeight());
 
-		// 기존 이미지 로드
+		// 로컬에 저장되어 있는 비교하기 위한 기존 이미지 로드
+		// 이떄 파일의 경로 값을 절대 경로 지정함.
 		BufferedImage referenceImage = ImageIO
 				.read(new File("E:\\eclipse_workspace\\Tranggle_App\\src\\main\\resources\\loginpage_naver_icon.png"));
 
-		// 이미지 비교
+		// compageImage 함수에서 이미지 비교한 유사도 값을 리턴값으로 받아온다.
 		double similarity = compareImage(referenceImage, elementImage);
 
 		if (similarity >= 0.9) {
@@ -1031,10 +1032,12 @@ public class Tranggle_Method {
 
 	// 이미지 유사도 비교 함수
 	public static double compareImage(BufferedImage image1, BufferedImage image2) {
+		// 로컬의 저장된 이미지와 앨리먼트로 갭쳐한 이미지를 각 픽셀의 RGB 값으로 한 픽셀씩 비교한다.
 		int width = image1.getWidth();
 		int height = image1.getHeight();
 		int equalPixels = 0;
 
+		//한 픽셀 시 비교 하는 함수 > 값이 동일할 경우, pixel 변수값을 증가 시킴
 		for (int y = 0; y < height; y++) {
 			for (int x = 0; x < width; x++) {
 				if (image1.getRGB(x, y) == image2.getRGB(x, y)) {
@@ -1042,6 +1045,8 @@ public class Tranggle_Method {
 				}
 			}
 		}
+		//이미지 가로 x 세로 곲한 영역 만큼 비교한 변수 값으로 나누어 얼마나 
+		//이미지가 유사 했는지 값을 리턴한다.
 		return (double) equalPixels / (width * height);
 	}
 
