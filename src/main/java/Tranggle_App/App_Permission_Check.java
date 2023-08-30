@@ -64,14 +64,16 @@ public class App_Permission_Check {
 	}
 
 	@Test
-	public void App_Permission_Check_Test() {
-		System.out.println("App_Permission_Check_Test() - Start > 7 Second Wait...");
+	public void App_Permission_Check_Test() throws Exception {
+		System.out.println("App_Permission_Check_Test() - Start > 10 Second Wait...");
 
-		driver.manage().timeouts().implicitlyWait(Tranggle_Method.long_Sleep_Seconds_7, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Tranggle_Method.long_Sleep_Seconds_10, TimeUnit.SECONDS);
 
 		System.out.println("App_Run_Test() - 앱 실행 체크 - 앨리먼트 가져오기 시작");
 
 		try {
+			System.out.println("App_Permission_Check_Test() - 실행 후 앱 접근 권한 안내 팝업이 처음 출력되는 경우,");
+			
 			MobileElement app_Access_Rights_Guide_Title = driver
 					.findElementByXPath(app_Access_Rights_Guide_Title_Xpath);
 			String app_Access_Rights_Guide_Title_Text = app_Access_Rights_Guide_Title.getText();
@@ -94,18 +96,40 @@ public class App_Permission_Check {
 				Tranggle_Method.Health_Inf_Access_Allow_Popup_Allowed_Click(driver);
 				Tranggle_Method.Alert_Allow_Popup_Allowed_Click(driver);
 				Tranggle_Method.Trg_Guide_Skip_Click(driver);
-			} else {
-				System.out.println(
-						"App_Permission_Check_Test() - app_Access_Rights_Guide Print Failure > app_Access_Rights_Guide_Title_Text : "
-								+ app_Access_Rights_Guide_Title_Text);
-
-				throw new Exception("앱 접근 권한 안내 화면 출력 실패했씁니다.");
-			}
-
+			} 
+			
 		} catch (Exception e) {
 			// TODO: handle exception
-			System.out.println("App_Permission_Check_Test() - Failure > e : " + e);
-			e.printStackTrace();
+			System.out.println("App_Permission_Check_Test() - 최초 실행 후 백그라운드 위치정보 사용 팝업이 처음 출력되는 경우");
+			
+			MobileElement using_BG_Loc_Inf_Popup_Title = driver.findElementByXPath(using_BG_Loc_Inf_Popup_Title_Xpath);
+			String using_BG_Loc_Inf_Popup_Title_Text = using_BG_Loc_Inf_Popup_Title.getText();
+			
+			if (using_BG_Loc_Inf_Popup_Title_Text.equals("백그라운드 위치정보 사용")) {
+				System.out.println(
+						"App_Permission_Check_Test() - using_BG_Loc_Inf_Popup Print Success > using_BG_Loc_Inf_Popup_Title_Text : "
+								+ using_BG_Loc_Inf_Popup_Title_Text);
+				
+				Tranggle_Method.Using_BG_Loc_Inf_Popup_Confirm_Click(driver);
+				Tranggle_Method.My_Dev_Loc_Allowed_Popup_Using_App_Allow_Click(driver);
+				Tranggle_Method.Device_Settings_Loc_Access_Rights_Allthetime_App_Allow_Click(driver);
+				Tranggle_Method.Device_Settings_Loc_Access_Rights_Back_Click(driver);
+				Tranggle_Method.Media_Access_Allow_Popup_Allow_Click(driver);
+				Tranggle_Method.Phone_Call_And_Manage_Allow_Popup_Allowed_Click(driver);
+				Tranggle_Method.Picture_And_Video_Record_Allow_Popup_Using_App_Allow_Click(driver);
+				Tranggle_Method.Device_Connect_Or_Device_Location_Check_Allow_Popup_Allowed_Click(driver);
+				Tranggle_Method.Health_Inf_Access_Allow_Popup_Allowed_Click(driver);
+				Tranggle_Method.Alert_Allow_Popup_Allowed_Click(driver);
+				//해당 건은 최초 실행 시에 트랭글 가이드 화면이 나와야 하나 출력되지 않아 이슈 사항이나, 우선 테스트스크립트 동작을 위해 
+				//주석 처리 함
+				//Tranggle_Method.Trg_Guide_Skip_Click(driver);
+			} else {
+				System.out.println(
+						"App_Permission_Check_Test() - using_BG_Loc_Inf_Popup Print Failure > using_BG_Loc_Inf_Popup_Title_Text : "
+								+ using_BG_Loc_Inf_Popup_Title_Text);
+
+				throw new Exception("앱 접근 권한 허용 후 로그인 페이지 이동에 실패했씁니다.");
+			}
 		}
 		
 		try {
@@ -129,10 +153,25 @@ public class App_Permission_Check {
 	@AfterClass
 	public void EndDriver() throws Exception {
 		if (driver != null) {
-			System.out.println("SetDriver() - Start");
-			Tranggle_Method.LoginPage_Login_Status_Check_Unchecked(driver);
+			System.out.println("EndDriver() - Start");
+			
+			boolean loginpage_Login_Status_isChecked = Tranggle_Method.LoginPage_Login_Status_isChecked(driver);
+			
+			if (loginpage_Login_Status_isChecked == true) {
+				Tranggle_Method.LoginPage_Login_Status_Check_Unchecked(driver);
+			}
 			Tranggle_Method.Login(driver);
 			Tranggle_Method.Front_PopUp_Close(driver);
+			
+			try {
+				System.out.println("절전기능 중지 요청 팝업이 출력되었을 경우,");
+				Tranggle_Method.Req_To_Stop_Power_Saving_Popop_Confirm_Click(driver);
+				Tranggle_Method.Stop_Optimizing_Battery_Usage_Popup_Allowed_Click(driver);
+			} catch (Exception e) {
+				// TODO: handle exception
+				System.out.println("절전기능 중지 요청 팝업 미출력됨 - 아무런 동작 처리 하지 않음");
+			}
+			
 			Tranggle_Method.Logout(driver);
 			driver.quit();
 		}

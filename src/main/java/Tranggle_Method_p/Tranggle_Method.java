@@ -2,6 +2,7 @@ package Tranggle_Method_p;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import javax.imageio.ImageIO;
@@ -26,7 +27,19 @@ public class Tranggle_Method {
 	private static String home_Profil_Guest_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.TextView[1]";
 	private static String home_Pedometer_Title_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.FrameLayout/android.widget.TextView";
 	private static String home_Header_Settings_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ImageView[2]";
+	
+	
+	// 트랭글 홈 > 절전기능 중지 요청 팝업
+	private static String req_to_Stop_Power_Saving_Popup_Title_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.TextView";
+	private static String req_to_Stop_Power_Saving_Popup_Confirm_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView";
+	
+	// 트랭글 홈 > 배터리 ㅊ사용량 최적화 중지 
+	private static String stop_Optimizing_Battery_Usage_Popup_Title_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView";
+	private static String stop_Optimizing_Battery_Usage_Popup_Allowed_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button[2]";
+	private static String stop_Optimizing_Battery_Usage_Popup_Deny_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button[1]";
+	
 
+	
 	// 트랭글 환경설정 화면 (홈 > 환결설정)
 	private static String settings_Title_Xpath = "//android.widget.LinearLayout[@content-desc=\"환경설정, 상위 메뉴로 이동\"]/android.widget.LinearLayout/android.widget.TextView";
 	private static String settings_Account_Title_Xpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.ListView/android.widget.FrameLayout[1]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView";
@@ -600,6 +613,43 @@ public class Tranggle_Method {
 		}
 	}
 
+	public static boolean LoginPage_Login_Status_isChecked(AppiumDriver<MobileElement> driver) throws Exception {
+		System.out.println("Tranggle_Method Class > LoginPage_Login_Status_isChecked() - Start");
+
+		// 앨리먼트 선택
+		MobileElement loginpage_Login_Status_CheckBox = driver
+				.findElementByXPath(loginpage_Login_Status_Checkbox_Xpath);
+
+		// 앨리먼트의 위치와 크기 가져오기
+		org.openqa.selenium.Point elementLocation = loginpage_Login_Status_CheckBox.getLocation();
+		Dimension elementSize = loginpage_Login_Status_CheckBox.getSize();
+
+		// 스크린 샷 전체 화면 이미지 가져오기
+		File screenshotFile = driver.getScreenshotAs(org.openqa.selenium.OutputType.FILE);
+		BufferedImage screenshotImage = ImageIO.read(screenshotFile);
+
+		// 앨리먼트의 부분 이미지 추출
+		BufferedImage elementImage = screenshotImage.getSubimage(elementLocation.getX(), elementLocation.getY(),
+				elementSize.getWidth(), elementSize.getHeight());
+
+		// 기존 이미지 로드
+		BufferedImage referenceImage = ImageIO.read(new File(
+				"E:\\eclipse_workspace\\Tranggle_App\\src\\main\\resources\\loginpage_login_status_Checkbox_Unchecked.png"));
+
+		// 이미지 비교
+		double similarity = compareImage(referenceImage, elementImage);
+
+		if (similarity >= 0.9) {
+			System.out.println(
+					"LoginPage_Login_Status_isChecked() - Image Compare Unchecked Success - similarity : " + similarity);
+			return false;
+		} else {
+			System.out.println(
+					"LoginPage_Login_Status_isChecked() - Image Compage Checked Fail - similarity : " + similarity);
+			return true;
+		}
+	}
+
 	public static void LoginPage_Login_Status_Check_Unchecked(AppiumDriver<MobileElement> driver) throws Exception {
 		System.out.println("Tranggle_Method Class > LoginPage_Login_Status_Check_Unchecked() - Start");
 
@@ -686,6 +736,56 @@ public class Tranggle_Method {
 		}
 	}
 
+	public static void Req_To_Stop_Power_Saving_Popop_Confirm_Click(AppiumDriver<MobileElement> driver) throws Exception {
+		System.out.println("Tranggle_Method Class > Req_To_Stop_Power_Saving_Popop_Confirm_Click() - Start");
+		
+		MobileElement req_To_Stop_Power_Saving_Popop_Title = driver.findElementByXPath(req_to_Stop_Power_Saving_Popup_Title_Xpath);
+		String req_To_Stop_Power_Saving_Popop_Title_Text = req_To_Stop_Power_Saving_Popop_Title.getText();
+		
+		if (req_To_Stop_Power_Saving_Popop_Title_Text.equals("절전기능 중지 요청")) {
+			System.out.println("Req_To_Stop_Power_Saving_Popop_Confirm_Click() - Popup Print Success > req_To_Stop_Power_Saving_Popop_Title_Text : " + req_To_Stop_Power_Saving_Popop_Title_Text);
+			
+			MobileElement req_To_Stop_Power_Saving_Popop_Confirm = driver.findElementByXPath(req_to_Stop_Power_Saving_Popup_Confirm_Xpath);
+			req_To_Stop_Power_Saving_Popop_Confirm.click();
+			
+			System.out.println("Req_To_Stop_Power_Saving_Popop_Confirm_Click() - req_To_Stop_Power_Saving_Popop_Confirm Click Success");
+			
+			driver.manage().timeouts().implicitlyWait(long_Sleep_Seconds_7, TimeUnit.SECONDS);
+			Thread.sleep(normal_Sleep_Times_2000);
+		} else {
+			System.out.println("Req_To_Stop_Power_Saving_Popop_Confirm_Click() - Popup Print Failure > req_To_Stop_Power_Saving_Popop_Title_Text : " + req_To_Stop_Power_Saving_Popop_Title_Text);
+			
+			throw new Exception("절전기능 중지 요청 팝업 출력에 실패했습니다.");
+		}
+	}
+	
+	public static void Stop_Optimizing_Battery_Usage_Popup_Allowed_Click(AppiumDriver<MobileElement> driver) throws Exception {
+		System.out.println("Tranggle_Method Class > Stop_Optimizing_Battery_Usage_Popup_Allowed_Click() - Start");
+		
+		MobileElement stop_Optimizing_Battery_Usage_Popup_Title = driver.findElementByXPath(stop_Optimizing_Battery_Usage_Popup_Title_Xpath);
+		String stop_Optimizing_Battery_Usage_Popup_Title_Text = stop_Optimizing_Battery_Usage_Popup_Title.getText();
+		
+		if (stop_Optimizing_Battery_Usage_Popup_Title_Text.equals("배터리 사용량 최적화 중지")) {
+			System.out.println("Stop_Optimizing_Battery_Usage_Popup_Allowed_Click() - Popup Print Success > stop_Optimizing_Battery_Usage_Popup_Title_Text : " + stop_Optimizing_Battery_Usage_Popup_Title_Text);
+			
+			MobileElement stop_Optimizing_Battery_Usage_Popup_Allowed = driver.findElementByXPath(stop_Optimizing_Battery_Usage_Popup_Allowed_Xpath);
+			stop_Optimizing_Battery_Usage_Popup_Allowed.click();
+			
+			System.out.println("Stop_Optimizing_Battery_Usage_Popup_Allowed_Click() - Stop_Optimizing_Battery_Usage_Popup_Allowed_Click Success");
+			
+			driver.manage().timeouts().implicitlyWait(long_Sleep_Seconds_7, TimeUnit.SECONDS);
+			Thread.sleep(normal_Sleep_Times_2000);
+		} else {
+			System.out.println("Stop_Optimizing_Battery_Usage_Popup_Allowed_Click() - Popup Print Failure > stop_Optimizing_Battery_Usage_Popup_Title_Text : " + stop_Optimizing_Battery_Usage_Popup_Title_Text);
+			
+			throw new Exception("배터리 사용량 최적화 중지 팝업 출력에 실패했습니다.");
+		}
+		
+		
+	}
+	
+	
+	
 	public static void Login(AppiumDriver<MobileElement> driver) throws Exception {
 
 		System.out.println("Tranggle_Method Class > Login() - Start");
@@ -786,7 +886,8 @@ public class Tranggle_Method {
 			driver.manage().timeouts().implicitlyWait(long_Sleep_Seconds_30, TimeUnit.SECONDS);
 			Thread.sleep(short_Sleep_Times_1000);
 		} else {
-			System.out.println("Naver_Login_Check() - nloginpage Move Failure > nloginpage_Title_Text : " + nloginpage_Title_Text);
+			System.out.println(
+					"Naver_Login_Check() - nloginpage Move Failure > nloginpage_Title_Text : " + nloginpage_Title_Text);
 
 			throw new Exception("네이버 로그인 화면 이동 및 네이버 로그인 화면 > 타이틀 앨리먼트 찾기 실패했습니다.");
 		}
@@ -826,6 +927,7 @@ public class Tranggle_Method {
 			account_Logout_Popup_Confirm.click();
 
 			driver.manage().timeouts().implicitlyWait(long_Sleep_Seconds_10, TimeUnit.SECONDS);
+			Thread.sleep(short_Sleep_Times_1000);
 
 			System.out.println("Logout() - Logout Popup > [Confirm] Button 클릭 후 약 10초 대기");
 		} else {
@@ -841,10 +943,10 @@ public class Tranggle_Method {
 		String loginpage_Login_Btn_Text = loginpage_Login_Btn.getText();
 
 		if (loginpage_Login_Btn_Text.equals("로그인")) {
-			System.out.println("Logou() - Logout & Loginpage Move Success > loginpage_Login_Btn_Text : "
+			System.out.println("Logout() - Logout & Loginpage Move Success > loginpage_Login_Btn_Text : "
 					+ loginpage_Login_Btn_Text);
 		} else {
-			System.out.println("Logou() - Logout & Loginpage Move Success > loginpage_Login_Btn_Text : "
+			System.out.println("Logout() - Logout & Loginpage Move Failure > loginpage_Login_Btn_Text : "
 					+ loginpage_Login_Btn_Text);
 
 			throw new Exception("로그아웃 실패 or 로그아웃 후 로그인 페이지 이동 실패했습니다.");
@@ -1037,7 +1139,7 @@ public class Tranggle_Method {
 		int height = image1.getHeight();
 		int equalPixels = 0;
 
-		//한 픽셀 시 비교 하는 함수 > 값이 동일할 경우, pixel 변수값을 증가 시킴
+		// 한 픽셀 시 비교 하는 함수 > 값이 동일할 경우, pixel 변수값을 증가 시킴
 		for (int y = 0; y < height; y++) {
 			for (int x = 0; x < width; x++) {
 				if (image1.getRGB(x, y) == image2.getRGB(x, y)) {
@@ -1045,8 +1147,8 @@ public class Tranggle_Method {
 				}
 			}
 		}
-		//이미지 가로 x 세로 곲한 영역 만큼 비교한 변수 값으로 나누어 얼마나 
-		//이미지가 유사 했는지 값을 리턴한다.
+		// 이미지 가로 x 세로 곲한 영역 만큼 비교한 변수 값으로 나누어 얼마나
+		// 이미지가 유사 했는지 값을 리턴한다.
 		return (double) equalPixels / (width * height);
 	}
 

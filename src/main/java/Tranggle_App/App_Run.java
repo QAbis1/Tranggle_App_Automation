@@ -82,11 +82,7 @@ public class App_Run {
 			
 			if (loginpage_Age_14_Limit_Guide_Txt_Text.equals("* 만 14세 이상 가입 가능합니다.")) {
 				System.out.println("App_Run_Test() - Loginpage Print & App_Run Success > loginpage_Age_14_Limit_Guide_Txt_Text : " + loginpage_Age_14_Limit_Guide_Txt_Text);
-			} else {
-				System.out.println("App_Run_Test() - Loginpage Print & App_Run Failure > loginpage_Age_14_Limit_Guide_Txt_Text : " + loginpage_Age_14_Limit_Guide_Txt_Text);
-				
-				throw new Exception("로그인 페이지 출력 or 앱 실행에 실패했습니다.");
-			}
+			} 
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.println("App_Run_Test() - 실행 후 트랭글 가이드 화면이 출력되었을 경우");

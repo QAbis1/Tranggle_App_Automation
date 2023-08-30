@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Tranggle_App.Naver_Login">
+      <class name="Tranggle_App.App_Permission_Check">
         <methods>
+          <include name="App_Permission_Check_Test"/>
           <include name="EndDriver"/>
-          <include name="Naver_Login_Test"/>
+          <include name="SetDriver"/>
         </methods>
-      </class> <!-- Tranggle_App.Naver_Login -->
+      </class> <!-- Tranggle_App.App_Permission_Check -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

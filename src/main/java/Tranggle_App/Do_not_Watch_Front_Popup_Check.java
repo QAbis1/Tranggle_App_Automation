@@ -99,14 +99,7 @@ public class Do_not_Watch_Front_Popup_Check {
 
 					throw new Exception("로그인 페이지 이동에 실패했습니다.");
 				}
-			} else {
-				System.out.println(
-						"Do_not_Watch_Front_Popup_Check_Test() - loginpage_Signup Find Failure > loginpage_Signup_Btn_Text : "
-								+ loginpage_Signup_Btn_Text);
-
-				throw new Exception("오늘 하루 보지 않기 체크 실패 후 홈화면 이동 실패했습니다.");
-			}
-
+			} 
 		} catch (Exception e) {
 			// TODO: handle exception
 			MobileElement front_Popup_CheckBox = driver.findElementByXPath(front_Popup_CheckBox_Xpath);

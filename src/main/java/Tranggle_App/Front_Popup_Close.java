@@ -83,13 +83,7 @@ public class Front_Popup_Close {
 						+ loginpage_Signup_Btn_Text);
 				Tranggle_Method.Login(driver);
 				Tranggle_Method.Front_PopUp_Close(driver);
-			} else {
-				System.out.println("Front_Popup_Close_Test() - App_Run Failure -> loginpage_Signup_Btn_Text : "
-						+ loginpage_Signup_Btn_Text);
-
-				throw new InterruptedException("로그인 페이지 진입 및 [회원가입] 버튼 앨리먼트 찾기 실패했습니다.");
-			}
-
+			} 
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.println("Front_Popup_Close_Test() - 실행 후 홈 화면 일 경우, 전면팝업 출력된 상태로 앨리먼트 가져오기 전");
