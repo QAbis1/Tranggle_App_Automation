@@ -19,7 +19,7 @@ import io.appium.java_client.remote.MobileCapabilityType;
 
 public class App_Run {
 
-	private AppiumDriver<MobileElement> driver;
+	AppiumDriver<MobileElement> driver;
 
 	@BeforeClass
 	public void SetDriver() throws MalformedURLException {

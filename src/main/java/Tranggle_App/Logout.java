@@ -76,6 +76,8 @@ public class Logout {
 			// TODO Auto-generated catch block
 			System.out.println("Logout_Test() - Logout Failure -> e : " + e);
 			e.printStackTrace();
+			
+			throw new InterruptedException("로그아웃 처리에 실패했습니다.");
 		}
 	}
 

@@ -84,22 +84,22 @@ public class Do_not_Watch_Front_Popup_Check {
 				Tranggle_Method.Front_PopUp_Close(driver);
 				Tranggle_Method.Logout(driver);
 				Tranggle_Method.Login(driver);
-
-				MobileElement home_Pedometer_Title = driver.findElementByXPath(home_Pedometer_Title_Xpath);
-				String home_Pedometer_Title_Txt = home_Pedometer_Title.getText();
-
-				if (home_Pedometer_Title_Txt.equals("만보기")) {
-					System.out.println(
-							"Do_not_Watch_Front_Popup_Check_Test() - Do_not_Watch_Front_Popup_Check Success > home_Pedometer_Title_Txt : "
-									+ home_Pedometer_Title_Txt);
-				} else {
-					System.out.println(
-							"Do_not_Watch_Front_Popup_Check_Test() - Do_not_Watch_Front_Popup_Check Failure > home_Pedometer_Title_Txt : "
-									+ home_Pedometer_Title_Txt);
-
-					throw new Exception("로그인 페이지 이동에 실패했습니다.");
-				}
 			} 
+			
+			MobileElement home_Pedometer_Title = driver.findElementByXPath(home_Pedometer_Title_Xpath);
+			String home_Pedometer_Title_Txt = home_Pedometer_Title.getText();
+
+			if (home_Pedometer_Title_Txt.equals("만보기")) {
+				System.out.println(
+						"Do_not_Watch_Front_Popup_Check_Test() - Do_not_Watch_Front_Popup_Check Success > home_Pedometer_Title_Txt : "
+								+ home_Pedometer_Title_Txt);
+			} else {
+				System.out.println(
+						"Do_not_Watch_Front_Popup_Check_Test() - Do_not_Watch_Front_Popup_Check Failure > home_Pedometer_Title_Txt : "
+								+ home_Pedometer_Title_Txt);
+
+				throw new Exception("로그인 페이지 이동에 실패했습니다.");
+			}
 		} catch (Exception e) {
 			// TODO: handle exception
 			MobileElement front_Popup_CheckBox = driver.findElementByXPath(front_Popup_CheckBox_Xpath);

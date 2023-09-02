@@ -10,6 +10,7 @@
 			<class name="Tranggle_App.Front_Popup_Close" />
 			<class name="Tranggle_App.Do_not_Watch_Front_Popup_Check" />
 			<class name="Tranggle_App.Naver_Login"></class>
+			<class name="Tranggle_App.Kakao_Login"></class>
 		</classes>
 	</test>
 </suite>

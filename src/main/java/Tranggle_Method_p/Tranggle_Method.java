@@ -2,7 +2,6 @@ package Tranggle_Method_p;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import javax.imageio.ImageIO;
@@ -27,19 +26,16 @@ public class Tranggle_Method {
 	private static String home_Profil_Guest_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.TextView[1]";
 	private static String home_Pedometer_Title_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.FrameLayout/android.widget.TextView";
 	private static String home_Header_Settings_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ImageView[2]";
-	
-	
+
 	// 트랭글 홈 > 절전기능 중지 요청 팝업
 	private static String req_to_Stop_Power_Saving_Popup_Title_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.TextView";
 	private static String req_to_Stop_Power_Saving_Popup_Confirm_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView";
-	
-	// 트랭글 홈 > 배터리 ㅊ사용량 최적화 중지 
+
+	// 트랭글 홈 > 배터리 사용량 최적화 중지
 	private static String stop_Optimizing_Battery_Usage_Popup_Title_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView";
 	private static String stop_Optimizing_Battery_Usage_Popup_Allowed_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button[2]";
 	private static String stop_Optimizing_Battery_Usage_Popup_Deny_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button[1]";
-	
 
-	
 	// 트랭글 환경설정 화면 (홈 > 환결설정)
 	private static String settings_Title_Xpath = "//android.widget.LinearLayout[@content-desc=\"환경설정, 상위 메뉴로 이동\"]/android.widget.LinearLayout/android.widget.TextView";
 	private static String settings_Account_Title_Xpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.ListView/android.widget.FrameLayout[1]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView";
@@ -75,6 +71,13 @@ public class Tranggle_Method {
 	private static String nloginpage_PW_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View[2]/android.view.View/android.view.View[2]/android.view.View[2]/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText";
 	private static String nloginpage_Login_Btn_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View[2]/android.view.View/android.view.View[2]/android.widget.Button";
 	private static String nloginpage_Status_Checkbox_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View[2]/android.view.View/android.view.View[2]/android.view.View[3]/android.view.View";
+
+	// 트랭글 > 로그인 > 카카오 로그인 화면
+	private static String kloginpage_Title_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View[1]/android.widget.TextView";
+	private static String kloginpage_ID_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View[1]/android.view.View/android.view.View/android.view.View[1]/android.view.View[1]/android.view.View/android.widget.EditText";
+	private static String kloginpage_PW_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View[1]/android.view.View/android.view.View/android.view.View[1]/android.view.View[2]/android.view.View/android.widget.EditText";
+	private static String kloginpage_Login_Btn_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View[1]/android.view.View/android.view.View/android.view.View[1]/android.widget.Button";
+	private static String kloginpage_Status_Checkbox_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View[1]/android.view.View/android.view.View/android.view.View[1]/android.view.View[3]/android.view.View";
 
 	// 트랭글 앱 접근 권한 안내 화면
 	private static String app_Access_Rights_Guide_Title_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout[1]/android.widget.TextView[1]";
@@ -139,6 +142,10 @@ public class Tranggle_Method {
 	// 트랭글 테스트 시 네이버 로그인 계정 정보 변수
 	private static String naver_Login_ID = "starbictoli1";
 	private static String naver_Login_PW = "1@qordlf";
+
+	// 트랭글 테스트 시 카카오 로그인 계정 정보 변수
+	private static String kakao_Login_ID = "starbictoli4";
+	private static String kakao_Login_PW = "1@qordlf";
 
 	// 타임 대기 시간 변수 선언
 	public static int short_Sleep_Seconds_1 = 1;
@@ -640,8 +647,8 @@ public class Tranggle_Method {
 		double similarity = compareImage(referenceImage, elementImage);
 
 		if (similarity >= 0.9) {
-			System.out.println(
-					"LoginPage_Login_Status_isChecked() - Image Compare Unchecked Success - similarity : " + similarity);
+			System.out.println("LoginPage_Login_Status_isChecked() - Image Compare Unchecked Success - similarity : "
+					+ similarity);
 			return false;
 		} else {
 			System.out.println(
@@ -736,56 +743,70 @@ public class Tranggle_Method {
 		}
 	}
 
-	public static void Req_To_Stop_Power_Saving_Popop_Confirm_Click(AppiumDriver<MobileElement> driver) throws Exception {
+	public static void Req_To_Stop_Power_Saving_Popop_Confirm_Click(AppiumDriver<MobileElement> driver)
+			throws Exception {
 		System.out.println("Tranggle_Method Class > Req_To_Stop_Power_Saving_Popop_Confirm_Click() - Start");
-		
-		MobileElement req_To_Stop_Power_Saving_Popop_Title = driver.findElementByXPath(req_to_Stop_Power_Saving_Popup_Title_Xpath);
+
+		MobileElement req_To_Stop_Power_Saving_Popop_Title = driver
+				.findElementByXPath(req_to_Stop_Power_Saving_Popup_Title_Xpath);
 		String req_To_Stop_Power_Saving_Popop_Title_Text = req_To_Stop_Power_Saving_Popop_Title.getText();
-		
+
 		if (req_To_Stop_Power_Saving_Popop_Title_Text.equals("절전기능 중지 요청")) {
-			System.out.println("Req_To_Stop_Power_Saving_Popop_Confirm_Click() - Popup Print Success > req_To_Stop_Power_Saving_Popop_Title_Text : " + req_To_Stop_Power_Saving_Popop_Title_Text);
-			
-			MobileElement req_To_Stop_Power_Saving_Popop_Confirm = driver.findElementByXPath(req_to_Stop_Power_Saving_Popup_Confirm_Xpath);
+			System.out.println(
+					"Req_To_Stop_Power_Saving_Popop_Confirm_Click() - Popup Print Success > req_To_Stop_Power_Saving_Popop_Title_Text : "
+							+ req_To_Stop_Power_Saving_Popop_Title_Text);
+
+			MobileElement req_To_Stop_Power_Saving_Popop_Confirm = driver
+					.findElementByXPath(req_to_Stop_Power_Saving_Popup_Confirm_Xpath);
 			req_To_Stop_Power_Saving_Popop_Confirm.click();
-			
-			System.out.println("Req_To_Stop_Power_Saving_Popop_Confirm_Click() - req_To_Stop_Power_Saving_Popop_Confirm Click Success");
-			
+
+			System.out.println(
+					"Req_To_Stop_Power_Saving_Popop_Confirm_Click() - req_To_Stop_Power_Saving_Popop_Confirm Click Success");
+
 			driver.manage().timeouts().implicitlyWait(long_Sleep_Seconds_7, TimeUnit.SECONDS);
 			Thread.sleep(normal_Sleep_Times_2000);
 		} else {
-			System.out.println("Req_To_Stop_Power_Saving_Popop_Confirm_Click() - Popup Print Failure > req_To_Stop_Power_Saving_Popop_Title_Text : " + req_To_Stop_Power_Saving_Popop_Title_Text);
-			
+			System.out.println(
+					"Req_To_Stop_Power_Saving_Popop_Confirm_Click() - Popup Print Failure > req_To_Stop_Power_Saving_Popop_Title_Text : "
+							+ req_To_Stop_Power_Saving_Popop_Title_Text);
+
 			throw new Exception("절전기능 중지 요청 팝업 출력에 실패했습니다.");
 		}
 	}
-	
-	public static void Stop_Optimizing_Battery_Usage_Popup_Allowed_Click(AppiumDriver<MobileElement> driver) throws Exception {
+
+	public static void Stop_Optimizing_Battery_Usage_Popup_Allowed_Click(AppiumDriver<MobileElement> driver)
+			throws Exception {
 		System.out.println("Tranggle_Method Class > Stop_Optimizing_Battery_Usage_Popup_Allowed_Click() - Start");
-		
-		MobileElement stop_Optimizing_Battery_Usage_Popup_Title = driver.findElementByXPath(stop_Optimizing_Battery_Usage_Popup_Title_Xpath);
+
+		MobileElement stop_Optimizing_Battery_Usage_Popup_Title = driver
+				.findElementByXPath(stop_Optimizing_Battery_Usage_Popup_Title_Xpath);
 		String stop_Optimizing_Battery_Usage_Popup_Title_Text = stop_Optimizing_Battery_Usage_Popup_Title.getText();
-		
+
 		if (stop_Optimizing_Battery_Usage_Popup_Title_Text.equals("배터리 사용량 최적화 중지")) {
-			System.out.println("Stop_Optimizing_Battery_Usage_Popup_Allowed_Click() - Popup Print Success > stop_Optimizing_Battery_Usage_Popup_Title_Text : " + stop_Optimizing_Battery_Usage_Popup_Title_Text);
-			
-			MobileElement stop_Optimizing_Battery_Usage_Popup_Allowed = driver.findElementByXPath(stop_Optimizing_Battery_Usage_Popup_Allowed_Xpath);
+			System.out.println(
+					"Stop_Optimizing_Battery_Usage_Popup_Allowed_Click() - Popup Print Success > stop_Optimizing_Battery_Usage_Popup_Title_Text : "
+							+ stop_Optimizing_Battery_Usage_Popup_Title_Text);
+
+			MobileElement stop_Optimizing_Battery_Usage_Popup_Allowed = driver
+					.findElementByXPath(stop_Optimizing_Battery_Usage_Popup_Allowed_Xpath);
 			stop_Optimizing_Battery_Usage_Popup_Allowed.click();
-			
-			System.out.println("Stop_Optimizing_Battery_Usage_Popup_Allowed_Click() - Stop_Optimizing_Battery_Usage_Popup_Allowed_Click Success");
-			
+
+			System.out.println(
+					"Stop_Optimizing_Battery_Usage_Popup_Allowed_Click() - Stop_Optimizing_Battery_Usage_Popup_Allowed_Click Success");
+
 			driver.manage().timeouts().implicitlyWait(long_Sleep_Seconds_7, TimeUnit.SECONDS);
 			Thread.sleep(normal_Sleep_Times_2000);
 		} else {
-			System.out.println("Stop_Optimizing_Battery_Usage_Popup_Allowed_Click() - Popup Print Failure > stop_Optimizing_Battery_Usage_Popup_Title_Text : " + stop_Optimizing_Battery_Usage_Popup_Title_Text);
-			
+			System.out.println(
+					"Stop_Optimizing_Battery_Usage_Popup_Allowed_Click() - Popup Print Failure > stop_Optimizing_Battery_Usage_Popup_Title_Text : "
+							+ stop_Optimizing_Battery_Usage_Popup_Title_Text);
+
 			throw new Exception("배터리 사용량 최적화 중지 팝업 출력에 실패했습니다.");
 		}
-		
-		
+
 	}
-	
-	
-	
+
+	// 트랭글 일반 계정 로그인
 	public static void Login(AppiumDriver<MobileElement> driver) throws Exception {
 
 		System.out.println("Tranggle_Method Class > Login() - Start");
@@ -821,6 +842,7 @@ public class Tranggle_Method {
 
 	}
 
+	// 트랭글 로그인 페이지 > 간편로그인 > 네이버 아이콘 클릭
 	public static void Loginpage_Naver_Icon_Click(AppiumDriver<MobileElement> driver) throws Exception {
 		System.out.println("Tranggle_Method Class > Loginpage_Naver_Icon_Click() - Start");
 
@@ -854,14 +876,15 @@ public class Tranggle_Method {
 			driver.manage().timeouts().implicitlyWait(long_Sleep_Seconds_30, TimeUnit.SECONDS);
 			Thread.sleep(short_Sleep_Times_1000);
 
-			System.out.println("Loginpage_Naver_Icon_Click() - loginpage_Naver_Loing_Icon Click Success");
+			System.out.println("Loginpage_Naver_Icon_Click() - loginpage_Naver_Login_Icon Click Success");
 		} else {
 			System.out.println("Naver_Login() - Image Compage Fail - similarity : " + similarity);
 
-			throw new Exception("로그인페이지 진입 실패 or 로그인 페이지 > 로그인 상태 유지 앨리먼트 찾기 실패했습니다.");
+			throw new Exception("로그인페이지 > 네이버 아이콘을 찾기 못하거나 로그인 페이지 > 네이버 아이콘 클릭에 실패했습니다.");
 		}
 	}
 
+	// 네이비 로그인 기능
 	public static void Naver_Login_Check(AppiumDriver<MobileElement> driver) throws Exception {
 		System.out.println("Tranggle_Method Class > Naver_Login_Check() - Start");
 
@@ -893,6 +916,175 @@ public class Tranggle_Method {
 		}
 	}
 
+	// 네이버 로그인 페이지 > 로그인 상태 유지 체크박스 해제
+	public static void Naver_Loginpage_Login_Status_Check_Unchecked(AppiumDriver<MobileElement> driver)
+			throws Exception {
+		System.out.println("Tranggle_Method Class > Naver_Loginpage_Login_Status_Check_Unchecked() - Start");
+
+		// 네이버 로그인 페이지 > 로그인 상태 유지 앨리먼트 가져옮
+		MobileElement nloginpage_Status_Checkbox = driver.findElementByXPath(nloginpage_Status_Checkbox_Xpath);
+
+		// 로그인 상태 유지 앨리먼트의 위치와 크기 가져오기
+		org.openqa.selenium.Point elementLocation = nloginpage_Status_Checkbox.getLocation();
+		Dimension elementSize = nloginpage_Status_Checkbox.getSize();
+
+		// 가져온 앨리먼트를 스크린 샷 전체 화면 이미지 가져온 파일 읽음
+		File screenshotFile = driver.getScreenshotAs(org.openqa.selenium.OutputType.FILE);
+		BufferedImage screenshotImage = ImageIO.read(screenshotFile);
+
+		// 가져온 앨리먼트의 부분 이미지 추출 (함주 파라미터 값으로 앨리먼트 x, y 좌표와 가로 / 세로 크키값을 넘겨줆
+		BufferedImage elementImage = screenshotImage.getSubimage(elementLocation.getX(), elementLocation.getY(),
+				elementSize.getWidth(), elementSize.getHeight());
+
+		// 로컬에 저장되어 있는 비교하기 위한 기존 이미지 로드
+		// 이떄 파일의 경로 값을 절대 경로 지정함.
+		BufferedImage referenceImage = ImageIO.read(new File(
+				"E:\\eclipse_workspace\\Tranggle_App\\src\\main\\resources\\naver_loginpage_login_status_Checkbox_Checked.png"));
+
+		// compageImage 함수에서 이미지 비교한 유사도 값을 리턴값으로 받아온다.
+		double similarity = compareImage(referenceImage, elementImage);
+
+		if (similarity >= 0.9) {
+			System.out.println("Naver_Loginpage_Login_Status_Check_Unchecked() - Image Compare Success - similarity : "
+					+ similarity);
+
+			nloginpage_Status_Checkbox.click();
+			driver.manage().timeouts().implicitlyWait(long_Sleep_Seconds_30, TimeUnit.SECONDS);
+			Thread.sleep(short_Sleep_Times_1000);
+
+			System.out.println(
+					"Naver_Loginpage_Login_Status_Check_Unchecked() - naver_Loginpage_Login_Status_Check Click(Checked -> Unchecked) Success");
+		} else {
+			System.out.println(
+					"Naver_Loginpage_Login_Status_Check_Unchecked() - Image Compage Fail - similarity : " + similarity);
+
+			throw new Exception("네이버 로그인 페이지 > 로그인 상태 유지 선택상태가 아니거나 체크 해제에 실패했습니다.");
+		}
+
+	}
+
+	// 트랭글 > 로그인 페이지 > 카카오 아이콘 클릭
+	public static void Loginpage_Kakao_Icon_Click(AppiumDriver<MobileElement> driver) throws Exception {
+		System.out.println("Tranggle_Method Class > Loginpage_Kakao_Icon_Click() - Start");
+
+		MobileElement loginpage_Kakao_Icon = driver.findElementByXPath(loginpage_Kakao_Icon_Xpath);
+
+		// 카카오 아이콘 > 앨리먼트의 위치와 크기 가져오기
+		org.openqa.selenium.Point elementLocation = loginpage_Kakao_Icon.getLocation();
+		Dimension elementSize = loginpage_Kakao_Icon.getSize();
+
+		// 가져온 앨리먼트를 스크린 샷 전체 화면 이미지 가져온 파일 읽음
+		File screenshotFile = driver.getScreenshotAs(org.openqa.selenium.OutputType.FILE);
+		BufferedImage screenshotImage = ImageIO.read(screenshotFile);
+
+		// 가져온 앨리먼트의 부분 이미지 추출 (함주 파라미터 값으로 앨리먼트 x, y 좌표와 가로 / 세로 크키값을 넘겨줆
+		BufferedImage elementImage = screenshotImage.getSubimage(elementLocation.getX(), elementLocation.getY(),
+				elementSize.getWidth(), elementSize.getHeight());
+
+		// 로컬에 저장되어 있는 비교하기 위한 기존 이미지 로드
+		// 이떄 파일의 경로 값을 절대 경로 지정함.
+		BufferedImage referenceImage = ImageIO
+				.read(new File("E:\\eclipse_workspace\\Tranggle_App\\src\\main\\resources\\loginpage_kakao_icon.png"));
+
+		// compageImage 함수에서 이미지 비교한 유사도 값을 리턴값으로 받아온다.
+		double similarity = compareImage(referenceImage, elementImage);
+
+		if (similarity >= 0.9) {
+			System.out.println("Loginpage_Kakao_Icon_Click() - Image Compare Success - similarity : " + similarity);
+
+			loginpage_Kakao_Icon.click();
+			driver.manage().timeouts().implicitlyWait(long_Sleep_Seconds_30, TimeUnit.SECONDS);
+			Thread.sleep(short_Sleep_Times_1000);
+
+			System.out.println("Loginpage_Kakao_Icon_Click() - loginpage_Kakao_Icon Click Success");
+		} else {
+			System.out.println("Loginpage_Kakao_Icon_Click() - Image Compage Fail - similarity : " + similarity);
+
+			throw new Exception("로그인페이지 > 카카오 아이콘 이미지 아니거나 로그인 페이지 > 카카오 아이콘 클릭에 실패했습니다.");
+		}
+
+	}
+
+	// 카카오 로그인 기능
+	public static void Kakao_Login_Check(AppiumDriver<MobileElement> driver) throws Exception {
+		System.out.println("Tranggle_Method Class > Kakao_Login_Check() - Start");
+
+		MobileElement kloginpage_Title = driver.findElementByXPath(kloginpage_Title_Xpath);
+		String kloginpage_Title_Text = kloginpage_Title.getText();
+
+		if (kloginpage_Title_Text.equals("Kakao")) {
+			System.out.println(
+					"Kakao_Login_Check() - kloginpage Move Success > nloginpage_Title_Text : " + kloginpage_Title_Text);
+
+			MobileElement kloginpage_ID = driver.findElementByXPath(kloginpage_ID_Xpath);
+			kloginpage_ID.sendKeys(kakao_Login_ID);
+
+			MobileElement kloginpage_PW = driver.findElementByXPath(kloginpage_PW_Xpath);
+			kloginpage_PW.sendKeys(kakao_Login_PW);
+
+			Thread.sleep(short_Sleep_Times_1000);
+
+			MobileElement kloginpage_Login_Btn = driver.findElementByXPath(kloginpage_Login_Btn_Xpath);
+			kloginpage_Login_Btn.click();
+
+			driver.manage().timeouts().implicitlyWait(long_Sleep_Seconds_30, TimeUnit.SECONDS);
+			Thread.sleep(short_Sleep_Times_1000);
+		} else {
+			System.out.println("Kakao_Login_Check() - kloginpage Move Failure > nkloginpage_Title_Text : "
+					+ kloginpage_Title_Text);
+
+			throw new Exception("카카오 로그인 화면 이동 및 카카오 로그인 화면 > 타이틀 앨리먼트 찾기 실패했습니다.");
+		}
+	}
+
+	// 카카오 로그인 페이지 > 로그인 상태 유지 체크박스 해제
+	public static void Kakao_Loginpage_Login_Status_Check_Unchecked(AppiumDriver<MobileElement> driver)
+			throws Exception {
+		System.out.println("Tranggle_Method Class > Kakao_Loginpage_Login_Status_Check_Unchecked() - Start");
+
+		// 네이버 로그인 페이지 > 로그인 상태 유지 앨리먼트 가져옮
+		MobileElement kloginpage_Status_Checkbox = driver.findElementByXPath(kloginpage_Status_Checkbox_Xpath);
+
+		// 로그인 상태 유지 앨리먼트의 위치와 크기 가져오기
+		org.openqa.selenium.Point elementLocation = kloginpage_Status_Checkbox.getLocation();
+		Dimension elementSize = kloginpage_Status_Checkbox.getSize();
+
+		// 가져온 앨리먼트를 스크린 샷 전체 화면 이미지 가져온 파일 읽음
+		File screenshotFile = driver.getScreenshotAs(org.openqa.selenium.OutputType.FILE);
+		BufferedImage screenshotImage = ImageIO.read(screenshotFile);
+
+		// 가져온 앨리먼트의 부분 이미지 추출 (함주 파라미터 값으로 앨리먼트 x, y 좌표와 가로 / 세로 크키값을 넘겨줆
+		BufferedImage elementImage = screenshotImage.getSubimage(elementLocation.getX(), elementLocation.getY(),
+				elementSize.getWidth(), elementSize.getHeight());
+
+		// 로컬에 저장되어 있는 비교하기 위한 기존 이미지 로드
+		// 이떄 파일의 경로 값을 절대 경로 지정함.
+		BufferedImage referenceImage = ImageIO.read(new File(
+				"E:\\eclipse_workspace\\Tranggle_App\\src\\main\\resources\\kakao_loginpage_login_status_Checkbox_Checked.png"));
+
+		// compageImage 함수에서 이미지 비교한 유사도 값을 리턴값으로 받아온다.
+		double similarity = compareImage(referenceImage, elementImage);
+
+		if (similarity >= 0.9) {
+			System.out.println("Kakao_Loginpage_Login_Status_Check_Unchecked() - Image Compare Success - similarity : "
+					+ similarity);
+
+			kloginpage_Status_Checkbox.click();
+			driver.manage().timeouts().implicitlyWait(long_Sleep_Seconds_30, TimeUnit.SECONDS);
+			Thread.sleep(short_Sleep_Times_1000);
+
+			System.out.println(
+					"Kakao_Loginpage_Login_Status_Check_Unchecked() - kakao_Loginpage_Login_Status_Check Click(Checked -> Unchecked) Success");
+		} else {
+			System.out.println(
+					"Kakao_Loginpage_Login_Status_Check_Unchecked() - Image Compage Fail - similarity : " + similarity);
+
+			throw new Exception("카카오 로그인 페이지 > 로그인 상태 유지 선택상태가 아니거나 체크 해제에 실패했습니다.");
+		}
+
+	}
+
+	// 트랭글 로그아웃
 	public static void Logout(AppiumDriver<MobileElement> driver) throws Exception {
 		System.out.println("Tranggle_Method Class > Logout() - Start");
 
@@ -954,6 +1146,7 @@ public class Tranggle_Method {
 
 	}
 
+	// 트랭글 홈 화면 > 상단 > 설정 버튼 클릭
 	public static void Home_Header_Setting_Click(AppiumDriver<MobileElement> driver) throws Exception {
 		System.out.println("Tranggle_Method Class > Home_Header_Setting_Click() - Start");
 		System.out.println("Home_Header_Setting_Click() - home_Header_Settings Button 앨리먼트 가져오기");

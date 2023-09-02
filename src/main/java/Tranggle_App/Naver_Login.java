@@ -75,6 +75,7 @@ public class Naver_Login {
 				System.out.println("Naver_Login_Test() - loginpage Print Success > loginpage_Sns_Login_Title_Text ; "
 						+ loginpage_Sns_Login_Title_Text);
 				Tranggle_Method.Loginpage_Naver_Icon_Click(driver);
+				Tranggle_Method.Naver_Loginpage_Login_Status_Check_Unchecked(driver);
 				Tranggle_Method.Naver_Login_Check(driver);
 				// Tranggle_Method.Front_Popup_CheckBox_Check(driver);
 				// Tranggle_Method.Front_PopUp_Close(driver);
@@ -101,6 +102,8 @@ public class Naver_Login {
 			}
 		} catch (Exception e) {
 			System.out.println("Naver_Login_Test() - naver Login Failure > e : " + e);
+			
+			throw new Exception("로그인 페이지 이동 및 네이버 로그인에 실패했습니다.");
 		}
 	}
 
