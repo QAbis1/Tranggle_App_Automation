@@ -27,6 +27,12 @@ public class Tranggle_Method {
 	private static String home_Pedometer_Title_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.FrameLayout/android.widget.TextView";
 	private static String home_Header_Settings_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ImageView[2]";
 
+	// 트랭글 홈 화면 > 하단 > 내비게이션
+	private static String home_Bottom_Nav_Home_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]";
+	private static String home_Bottom_Nav_Exercise_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]";
+	private static String home_Bottom_Nav_Community_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[3]";
+	private static String home_Bottom_Nav_Mission_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[4]";
+	
 	// 트랭글 홈 > 절전기능 중지 요청 팝업
 	private static String req_to_Stop_Power_Saving_Popup_Title_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.TextView";
 	private static String req_to_Stop_Power_Saving_Popup_Confirm_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView";
@@ -48,6 +54,9 @@ public class Tranggle_Method {
 	private static String account_Logout_Popup_Cancel_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView[1]";
 	private static String account_Logout_Popup_Confirm_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView[2]";
 
+	// 트랭글 > 운동하기 화면 
+	private static String exercise_Traning_Start_Btn_Xpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout[1]/android.widget.FrameLayout[3]/android.widget.LinearLayout/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.TextView";
+	
 	// 트랭글 로그인 화면
 	private static String loginpage_ID_Input_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.EditText[1]";
 	private static String loginpage_PW_Input_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.EditText[2]";
@@ -207,12 +216,13 @@ public class Tranggle_Method {
 		System.out.println("Using_BG_Loc_Inf_Popup_Confirm() - Using_BG_Loc_Int_Popup Confirm Click Success");
 
 		driver.manage().timeouts().implicitlyWait(long_Sleep_Seconds_10, TimeUnit.SECONDS);
+		Thread.sleep(normal_Sleep_Times_2000);
 
 		MobileElement my_Device_Loc_Access_Check_Popup_Title = driver
 				.findElementByXPath(my_Device_Loc_Access_Check_Popup_Title_Xpath);
 		String my_Device_Loc_Access_Check_Popup_Title_Text = my_Device_Loc_Access_Check_Popup_Title.getText();
 
-		if (my_Device_Loc_Access_Check_Popup_Title_Text.equals("트랭글에서 내 기기 위치에 액세스하도록 허용하시겠습니까?")) {
+		if (my_Device_Loc_Access_Check_Popup_Title_Text.equals("트랭글에서 내 기기의 위치 정보에 액세스하도록 허용하시겠습니까?")) {
 			System.out.println(
 					"Using_BG_Loc_Inf_Popup_Confirm_Click() - my_Device_Loc_Access_Check_Popup Print Success > my_Device_Loc_Access_Check_Popup_Title_Text : "
 							+ my_Device_Loc_Access_Check_Popup_Title_Text);
@@ -1261,6 +1271,26 @@ public class Tranggle_Method {
 			e.printStackTrace();
 		}
 	}
+	
+	public static void Home_Bottom_Nav_Exercise_Click(AppiumDriver<MobileElement> driver) throws Exception {
+		System.out.println("Tranggle_Method Class > Home_Bottom_Nav_Exercise_Click - Start");
+		
+		try {
+			MobileElement home_Bottom_Nav_Exercise = driver.findElementByXPath(home_Bottom_Nav_Exercise_Xpath);
+			
+			System.out.println("Home_Bottom_Nav_Exercise_Click() - Nav_Exercise Click Success");
+			home_Bottom_Nav_Exercise.click();
+			driver.manage().timeouts().implicitlyWait(long_Sleep_Seconds_10, TimeUnit.SECONDS);
+			Thread.sleep(short_Sleep_Times_1000);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Home_Bottom_Nav_Exercise_Click() - Nav_Exercise Click Failure");
+			e.printStackTrace();
+			
+			throw new Exception("홈 > 하단 > 내비게이션 > 운동하기 앨리먼트를 찾기 못했거나 클릭에 실패했습니다.");
+		}
+	}
+	
 
 	// 스크롤 다운 / 업 / LEFT / RIGHT 이동 함수 정의
 	// 스크롤 다운 이동 함수
