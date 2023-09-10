@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Tranggle_App.App_Permission_Check">
+      <class name="Tranggle_App.Tranggle_Exercise_Move">
         <methods>
-          <include name="App_Permission_Check_Test"/>
+          <include name="Tranggle_Exercise_Move_Test"/>
           <include name="EndDriver"/>
           <include name="SetDriver"/>
         </methods>
-      </class> <!-- Tranggle_App.App_Permission_Check -->
+      </class> <!-- Tranggle_App.Tranggle_Exercise_Move -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

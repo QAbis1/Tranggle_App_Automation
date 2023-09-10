@@ -83,8 +83,8 @@ public class Front_Popup_Close {
 						+ loginpage_Signup_Btn_Text);
 				Tranggle_Method.Login(driver);
 				Thread.sleep(Tranggle_Method.normal_Sleep_Times_2000);
-				//2023.9.2 (토) 라이브 빌드 기준 > 전면 팝업 출력되지 않아, 문제가 있어 주석 처리
-				//Tranggle_Method.Front_PopUp_Close(driver);
+				//2023.9.10 (일) 라이브 빌드 기준 > 전면 팝업 재출력되어 주석 해제
+				Tranggle_Method.Front_PopUp_Close(driver);
 			} 
 		} catch (Exception e) {
 			// TODO: handle exception

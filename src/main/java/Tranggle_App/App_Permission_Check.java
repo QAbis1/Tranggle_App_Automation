@@ -45,7 +45,7 @@ public class App_Permission_Check {
 			capabilities.setCapability(app_Package, app_Package_Name);
 			capabilities.setCapability(app_Activity, app_Activity_Name);
 
-			capabilities.setCapability(MobileCapabilityType.NO_RESET, true);
+			capabilities.setCapability(MobileCapabilityType.NO_RESET, false);
 			capabilities.setCapability(MobileCapabilityType.FULL_RESET, false);
 
 			System.out.println("SetDriver() - Driver setCapability Success");

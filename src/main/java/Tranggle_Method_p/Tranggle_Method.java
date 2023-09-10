@@ -32,7 +32,7 @@ public class Tranggle_Method {
 	private static String home_Bottom_Nav_Exercise_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]";
 	private static String home_Bottom_Nav_Community_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[3]";
 	private static String home_Bottom_Nav_Mission_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[4]";
-	
+
 	// 트랭글 홈 > 절전기능 중지 요청 팝업
 	private static String req_to_Stop_Power_Saving_Popup_Title_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.TextView";
 	private static String req_to_Stop_Power_Saving_Popup_Confirm_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView";
@@ -54,9 +54,15 @@ public class Tranggle_Method {
 	private static String account_Logout_Popup_Cancel_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView[1]";
 	private static String account_Logout_Popup_Confirm_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView[2]";
 
-	// 트랭글 > 운동하기 화면 
+	// 트랭글 > 운동하기 화면
 	private static String exercise_Traning_Start_Btn_Xpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout[1]/android.widget.FrameLayout[3]/android.widget.LinearLayout/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.TextView";
-	
+
+	// 트랭글 > 운동하기 > 운동하기 튜토리얼 가이드 화면
+	private static String exercise_Tutorial_Guide_Skip_Xpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.TextView";
+
+	// 트랭글 > 운동하기 화면 > 현위치 버튼 모드 변경 팝업
+	private static String current_Loc_Button_Mode_Change_Popup_Confirm_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView";
+
 	// 트랭글 로그인 화면
 	private static String loginpage_ID_Input_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.EditText[1]";
 	private static String loginpage_PW_Input_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.EditText[2]";
@@ -1271,13 +1277,13 @@ public class Tranggle_Method {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static void Home_Bottom_Nav_Exercise_Click(AppiumDriver<MobileElement> driver) throws Exception {
 		System.out.println("Tranggle_Method Class > Home_Bottom_Nav_Exercise_Click - Start");
-		
+
 		try {
 			MobileElement home_Bottom_Nav_Exercise = driver.findElementByXPath(home_Bottom_Nav_Exercise_Xpath);
-			
+
 			System.out.println("Home_Bottom_Nav_Exercise_Click() - Nav_Exercise Click Success");
 			home_Bottom_Nav_Exercise.click();
 			driver.manage().timeouts().implicitlyWait(long_Sleep_Seconds_10, TimeUnit.SECONDS);
@@ -1286,11 +1292,57 @@ public class Tranggle_Method {
 			// TODO: handle exception
 			System.out.println("Home_Bottom_Nav_Exercise_Click() - Nav_Exercise Click Failure");
 			e.printStackTrace();
-			
+
 			throw new Exception("홈 > 하단 > 내비게이션 > 운동하기 앨리먼트를 찾기 못했거나 클릭에 실패했습니다.");
 		}
 	}
-	
+
+	public static void Exercise_Tutorial_Guide_Skip_Click(AppiumDriver<MobileElement> driver) throws Exception {
+		System.out.println("Tranggle_Method Class > Exercise_Tutorial_Guide_Skip_Click - Start");
+
+		try {
+			System.out.println("Tranggle_Method Class > Exercise_Tutorial_Guide_Skip Click > Before");
+
+			MobileElement exercise_Tutorial_Guide_Skip = driver.findElementByXPath(exercise_Tutorial_Guide_Skip_Xpath);
+			exercise_Tutorial_Guide_Skip.click();
+
+			System.out.println("Tranggle_Method Class > Exercise_Tutorial_Guide_Skip Click > After > 10 Seconds....");
+
+			driver.manage().timeouts().implicitlyWait(long_Sleep_Seconds_10, TimeUnit.SECONDS);
+			Thread.sleep(normal_Sleep_Times_2000);
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Tranggle_Method Class > Exercise_Tutorial_Guide_Skip Click Failure");
+
+			throw new Exception("운동하기 Tip 가이드 화면 > 미출력되거나 [건너뛰기] 버튼 앨리먼트 찾기에 실패했습니다.");
+		}
+	}
+
+	public static void Current_Loc_Button_Mode_Change_Popup_Confirm_Click(AppiumDriver<MobileElement> driver)
+			throws Exception {
+		System.out.println("Tranggle_Method Class > Current_Loc_Button_Mode_Change_Popup_Confirm_Click - Start");
+
+		try {
+			System.out.println("Tranggle_Method Class > Current_Loc_Button_Mode_Change_Popup_Confirm_Click > Before");
+
+			MobileElement current_Loc_Button_Mode_Change_Popup_Confirm = driver
+					.findElementByXPath(current_Loc_Button_Mode_Change_Popup_Confirm_Xpath);
+			current_Loc_Button_Mode_Change_Popup_Confirm.click();
+
+			System.out.println(
+					"Tranggle_Method Class > Current_Loc_Button_Mode_Change_Popup_Confirm_Click > After > 10 Seconds....");
+
+			driver.manage().timeouts().implicitlyWait(long_Sleep_Seconds_10, TimeUnit.SECONDS);
+			Thread.sleep(normal_Sleep_Times_2000);
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Tranggle_Method Class > Current_Loc_Button_Mode_Change_Popup_Confirm_Click Failure");
+
+			throw new Exception("운동하기 화면 > 현위치 버튼 모드 변경 팝업 출력 or [확인] 버튼 앨리먼트 찾기에 실패했습니다.");
+
+		}
+	}
 
 	// 스크롤 다운 / 업 / LEFT / RIGHT 이동 함수 정의
 	// 스크롤 다운 이동 함수

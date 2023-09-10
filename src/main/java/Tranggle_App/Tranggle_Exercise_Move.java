@@ -60,10 +60,12 @@ public class Tranggle_Exercise_Move {
 	}
 
 	@Test
-	public void Tranggle_Exercise_Move_Test(AppiumDriver<MobileElement> driver) throws Exception {
+	public void Tranggle_Exercise_Move_Test() throws Exception {
 		// Xpath 변수 선언
 		String exercise_Traning_Start_Btn_Xpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout[1]/android.widget.FrameLayout[3]/android.widget.LinearLayout/android.widget.FrameLayout[1]/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.TextView";
-
+		String exercise_Tutorial_Guide_Skip_Xpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.TextView";
+		String current_Loc_Button_Mode_Change_Popup_Confirm_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView";
+		
 		System.out.println("Tranggle_Exercise_Move_Test() - Start > 10 Second Wait...");
 
 		driver.manage().timeouts().implicitlyWait(Tranggle_Method.long_Sleep_Seconds_10, TimeUnit.SECONDS);
@@ -80,6 +82,37 @@ public class Tranggle_Exercise_Move {
 			Tranggle_Method.Home_Bottom_Nav_Exercise_Click(driver);
 		}
 
+		try {
+			System.out.println("Tranggle_Exercise_Move_Test() - Tranggle_Exercise_Tutorial_Guide Print Check....");
+			
+			MobileElement exercise_Tutorial_Guide_Skip = driver.findElementByXPath(exercise_Tutorial_Guide_Skip_Xpath);
+			String exercise_Tutorial_Guide_Skip_Text = exercise_Tutorial_Guide_Skip.getText();
+			
+			if (exercise_Tutorial_Guide_Skip_Text.equals("건너뛰기")) {
+				System.out.println("Tranggle_Exercise_Move_Test() - exercise_Tutorial_Guide Print & Skip Find Success > exercise_Tutorial_Guide_Skip_Text : " + exercise_Tutorial_Guide_Skip_Text);
+				Tranggle_Method.Exercise_Tutorial_Guide_Skip_Click(driver);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Tranggle_Exercise_Move_Test() - exercise_Tutorial_Guide Print X > e : " + e);
+		}
+		
+		try {
+			System.out.println("Tranggle_Exercise_Move_Test() - current_Loc_Button_Mode_Change_Popup Check....");
+			
+			MobileElement current_Loc_Button_Mode_Change_Popup_Confirm = driver.findElementByXPath(current_Loc_Button_Mode_Change_Popup_Confirm_Xpath);
+			String current_Loc_Button_Mode_Change_Popup_Confirm_Text = current_Loc_Button_Mode_Change_Popup_Confirm.getText();
+			
+			if (current_Loc_Button_Mode_Change_Popup_Confirm_Text.equals("확인")) {
+				System.out.println("Tranggle_Exercise_Move_Test() - current_Loc_Button_Mode_Change_Popup Print & Confirm Find Success > current_Loc_Button_Mode_Change_Popup_Confirm_Text : " + current_Loc_Button_Mode_Change_Popup_Confirm_Text);
+				
+				Tranggle_Method.Current_Loc_Button_Mode_Change_Popup_Confirm_Click(driver);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Tranggle_Exercise_Move_Test() - current_Loc_Button_Mode_Change_Popup Print X > e : " + e);
+		}
+		
 		try {
 			System.out.println("Tranggle_Exercise_Move_Test() - 트랭글 > 운동하기 화면 이동 여부 체크");
 
