@@ -11,6 +11,7 @@
 			<class name="Tranggle_App.Do_not_Watch_Front_Popup_Check" />
 			<class name="Tranggle_App.Naver_Login"></class>
 			<class name="Tranggle_App.Kakao_Login"></class>
+			<class name="Tranggle_App.Tranggle_Exercise_Move"></class>
 		</classes>
 	</test>
 </suite>

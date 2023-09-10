@@ -23,6 +23,7 @@ public class App_Permission_Check {
 	String using_BG_Loc_Inf_Popup_Title_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.TextView";
 	String using_BG_Loc_Inf_Popup_Confirm_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView";
 	String loginpage_Login_Btn_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.TextView[2]";
+	String home_Pedometer_Title_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/androidx.viewpager.widget.ViewPager/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.FrameLayout/android.widget.TextView";
 
 	@BeforeClass
 	public void SetDriver() {
@@ -131,22 +132,49 @@ public class App_Permission_Check {
 		}
 
 		try {
+			System.out.println("App_Permission_Check_Test() - login Page Print Case.....");
+
 			MobileElement loginPage_Login_Btn = driver.findElementByXPath(loginpage_Login_Btn_Xpath);
 			String loginPage_Login_Btn_Text = loginPage_Login_Btn.getText();
 
 			if (loginPage_Login_Btn_Text.equals("로그인")) {
 				System.out.println("App_Permission_Check_Test() - loginPage Move Success > loginPage_Login_Btn_Text : "
 						+ loginPage_Login_Btn_Text);
-			} else {
-				System.out.println("App_Permission_Check_Test() - loginPage Move Failure > loginPage_Login_Btn_Text : "
-						+ loginPage_Login_Btn_Text);
-
-				throw new Exception("로그인 페이지 이동 실패 및 앱 접근 권한 마무리 실패했습니다.");
 			}
-
 		} catch (Exception e) {
 			// TODO: handle exception
-			System.out.println("App_Permission_Check_Test() - loginPage Move Failure > Exception e : " + e);
+			System.out.println("App_Permission_Check_Test() - home Print Case...... > Exception e : " + e);
+
+			Tranggle_Method.Front_PopUp_Close(driver);
+
+			try {
+				System.out.println("App_Permission_Check_Test() - 절전기능 중지 요청 팝업이 출력되었을 경우,");
+				Tranggle_Method.Req_To_Stop_Power_Saving_Popop_Confirm_Click(driver);
+				Tranggle_Method.Stop_Optimizing_Battery_Usage_Popup_Allowed_Click(driver);
+			} catch (Exception e1) {
+				// TODO: handle exception
+				System.out.println("App_Permission_Check_Test() - 절전기능 중지 요청 팝업 미출력됨 - 아무런 동작 처리 하지 않음");
+
+				throw new Exception("홈 화면 > 전면 팝업 종료 후 절전기능 중지 요청 팝업이 미출력되어 실패했습니다.");
+			}
+
+			try {
+				System.out.println("App_Permission_Check_Test() - home Move case...");
+
+				MobileElement home_Pedometer_Title = driver.findElementByXPath(home_Pedometer_Title_Xpath);
+				String home_Pedometer_Title_Text = home_Pedometer_Title.getText();
+
+				if (home_Pedometer_Title_Text.equals("만보기")) {
+					System.out.println(
+							"App_Permission_Check_Test() - Home Print & App Permission_Check Success > home_Pedometer_Title_Text : "
+									+ home_Pedometer_Title_Text);
+				}
+			} catch (Exception e2) {
+				// TODO: handle exception
+				System.out.println("App_Permission_Check_Test() - home Move Failure > e : " + e2);
+
+				throw new Exception("홈 화면 > 전면 팝업 종료 후 홈화면 이동 실패 or 만보기 앨리먼트 찾기에 실패했습니다.");
+			}
 		}
 	}
 
@@ -155,24 +183,43 @@ public class App_Permission_Check {
 		if (driver != null) {
 			System.out.println("EndDriver() - Start");
 
-			boolean loginpage_Login_Status_isChecked = Tranggle_Method.LoginPage_Login_Status_isChecked(driver);
-
-			if (loginpage_Login_Status_isChecked == true) {
-				Tranggle_Method.LoginPage_Login_Status_Check_Unchecked(driver);
-			}
-			Tranggle_Method.Login(driver);
-			Tranggle_Method.Front_PopUp_Close(driver);
-
 			try {
-				System.out.println("절전기능 중지 요청 팝업이 출력되었을 경우,");
-				Tranggle_Method.Req_To_Stop_Power_Saving_Popop_Confirm_Click(driver);
-				Tranggle_Method.Stop_Optimizing_Battery_Usage_Popup_Allowed_Click(driver);
+				System.out.println("EndDriver() - login Page Print Case.....");
+
+				MobileElement loginPage_Login_Btn = driver.findElementByXPath(loginpage_Login_Btn_Xpath);
+				String loginPage_Login_Btn_Text = loginPage_Login_Btn.getText();
+
+				if (loginPage_Login_Btn_Text.equals("로그인")) {
+					System.out.println(
+							"EndDriver() - loginPage Move Success > loginPage_Login_Btn_Text : "
+									+ loginPage_Login_Btn_Text);
+
+					boolean loginpage_Login_Status_isChecked = Tranggle_Method.LoginPage_Login_Status_isChecked(driver);
+
+					if (loginpage_Login_Status_isChecked == true) {
+						Tranggle_Method.LoginPage_Login_Status_Check_Unchecked(driver);
+					}
+					Tranggle_Method.Login(driver);
+					Tranggle_Method.Front_PopUp_Close(driver);
+
+					try {
+						System.out.println("EndDriver() - 절전기능 중지 요청 팝업이 출력되었을 경우,");
+						Tranggle_Method.Req_To_Stop_Power_Saving_Popop_Confirm_Click(driver);
+						Tranggle_Method.Stop_Optimizing_Battery_Usage_Popup_Allowed_Click(driver);
+					} catch (Exception e) {
+						// TODO: handle exception
+						System.out.println("EndDriver() - 절전기능 중지 요청 팝업 미출력됨 - 아무런 동작 처리 하지 않음");
+					}
+
+					Tranggle_Method.Logout(driver);
+				}
 			} catch (Exception e) {
 				// TODO: handle exception
-				System.out.println("절전기능 중지 요청 팝업 미출력됨 - 아무런 동작 처리 하지 않음");
+				System.out.println("EndDriver() - home Print Case..... > e : " + e);
+				
+				Tranggle_Method.Logout(driver);
 			}
 
-			Tranggle_Method.Logout(driver);
 			driver.quit();
 		}
 	}

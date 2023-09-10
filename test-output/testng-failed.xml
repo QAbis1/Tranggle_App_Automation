@@ -1,8 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Default test(failed)">
+<suite name="Failed suite [All Test Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Tranggle_App(failed)">
     <classes>
+      <class name="Tranggle_App.Kakao_Login">
+        <methods>
+          <include name="EndDriver"/>
+          <include name="Kakao_Login_Test"/>
+          <include name="SetDriver"/>
+        </methods>
+      </class> <!-- Tranggle_App.Kakao_Login -->
+      <class name="Tranggle_App.App_Run">
+        <methods>
+          <include name="App_Run_Test"/>
+          <include name="SetDriver"/>
+          <include name="EndDriver"/>
+        </methods>
+      </class> <!-- Tranggle_App.App_Run -->
+      <class name="Tranggle_App.Tranggle_Exercise_Move">
+        <methods>
+          <include name="Tranggle_Exercise_Move_Test"/>
+          <include name="EndDriver"/>
+          <include name="SetDriver"/>
+        </methods>
+      </class> <!-- Tranggle_App.Tranggle_Exercise_Move -->
+      <class name="Tranggle_App.Front_Popup_Close">
+        <methods>
+          <include name="Front_Popup_Close_Test"/>
+          <include name="EndDriver"/>
+          <include name="SetDriver"/>
+        </methods>
+      </class> <!-- Tranggle_App.Front_Popup_Close -->
       <class name="Tranggle_App.Naver_Login">
         <methods>
           <include name="EndDriver"/>
@@ -10,6 +38,20 @@
           <include name="SetDriver"/>
         </methods>
       </class> <!-- Tranggle_App.Naver_Login -->
+      <class name="Tranggle_App.Normal_Login">
+        <methods>
+          <include name="SetDriver"/>
+          <include name="EndDriver"/>
+          <include name="Normal_Login_Test"/>
+        </methods>
+      </class> <!-- Tranggle_App.Normal_Login -->
+      <class name="Tranggle_App.Do_not_Watch_Front_Popup_Check">
+        <methods>
+          <include name="Do_not_Watch_Front_Popup_Check_Test"/>
+          <include name="SetDriver"/>
+          <include name="EndDriver"/>
+        </methods>
+      </class> <!-- Tranggle_App.Do_not_Watch_Front_Popup_Check -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Tranggle_App(failed) -->
+</suite> <!-- Failed suite [All Test Suite] -->

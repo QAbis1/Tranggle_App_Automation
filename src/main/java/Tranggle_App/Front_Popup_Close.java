@@ -82,7 +82,9 @@ public class Front_Popup_Close {
 				System.out.println("Front_Popup_Close_Test() - loginpage login processing.... -> loginpage_Signup_Btn_Text : "
 						+ loginpage_Signup_Btn_Text);
 				Tranggle_Method.Login(driver);
-				Tranggle_Method.Front_PopUp_Close(driver);
+				Thread.sleep(Tranggle_Method.normal_Sleep_Times_2000);
+				//2023.9.2 (토) 라이브 빌드 기준 > 전면 팝업 출력되지 않아, 문제가 있어 주석 처리
+				//Tranggle_Method.Front_PopUp_Close(driver);
 			} 
 		} catch (Exception e) {
 			// TODO: handle exception
