@@ -15,7 +15,6 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 
 public class Tranggle_Method {
-
 	// Xpath 변수 성언
 	private static String front_Popup_CheckBox_Txt_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.CheckBox";
 	private static String front_Popup_Close_Btn_Xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ImageView";
@@ -187,7 +186,7 @@ public class Tranggle_Method {
 	public static String platform_Android = "Android";
 	public static String devicename = "emulator-5554";
 	public static String app_Package_Name = "com.beaglemap.tranggle";
-	public static String app_Activity_Name = "com.beaglemap.tranggle.ui.base.UITranggleMainShell";
+	public static String app_Activity_Name = "com.beaglemap.presentation.activity.SplashActivity";
 
 	public static void App_Access_Right_Guide_Confirm_Click(AppiumDriver<MobileElement> driver) throws Exception {
 		System.out.println("Tranggle_Method Class > App_Access_Right_Guide_Confirm_Click() - Start");

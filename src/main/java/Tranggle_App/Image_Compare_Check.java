@@ -27,23 +27,14 @@ public class Image_Compare_Check {
 
 	@BeforeClass
 	public void SetDriver() {
-		String app_Package = "appPackage";
-		String app_Activity = "appActivity";
-
-		// mobileCapabilityType Value 명 변수 선언
-		String platform_Android = "Android";
-		String devicename = "emulator-5554";
-		String app_Package_Name = "com.beaglemap.tranggle";
-		String app_Activity_Name = "com.beaglemap.tranggle.ui.base.UITranggleMainShell";
-
 		try {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
 
-			capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, platform_Android);
-			capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, devicename);
+			capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, Tranggle_Method.platform_Android);
+			capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, Tranggle_Method.devicename);
 
-			capabilities.setCapability(app_Package, app_Package_Name);
-			capabilities.setCapability(app_Activity, app_Activity_Name);
+			capabilities.setCapability(Tranggle_Method.app_Package, Tranggle_Method.app_Package_Name);
+			capabilities.setCapability(Tranggle_Method.app_Activity, Tranggle_Method.app_Activity_Name);
 
 			capabilities.setCapability(MobileCapabilityType.NO_RESET, true);
 			capabilities.setCapability(MobileCapabilityType.FULL_RESET, false);
